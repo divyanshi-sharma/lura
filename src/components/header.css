@@ -1,0 +1,25 @@
+.container {
+    display: grid; 
+    grid-template-columns: 2fr 1fr;
+    width: 100vw;
+    position: fixed;
+    background-color: white;
+    z-index: 1000;
+}
+
+.header-image {
+    padding: 30px;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.sides {
+    padding: 30px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.about-us, .starts, .Box {
+    font-family: Arial, Helvetica, sans-serif;
+    color: #707070;
+}
