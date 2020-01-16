@@ -19,7 +19,14 @@
     justify-content: space-around;
     align-items: center;
 }
-.about-us, .starts, .Box {
+.about-us, .starts, .Box, .shop {
     font-family: Arial, Helvetica, sans-serif;
     color: #707070;
+}
+a > .shop {
+    color: #707070;
+    text-decoration: none;
+}
+a > .shop:hover {
+    color: black;
 }

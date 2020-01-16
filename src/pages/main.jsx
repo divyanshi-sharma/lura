@@ -31,7 +31,7 @@ export default class MainPage extends Component {
         return(
             <div >
                 <CustomHeader/>
-                <div className="main-container" style={{position:'relative', top:'150px'}}>
+                <div className="main-container" style={{position:'relative', top:'186px'}}>
                 <div className="line-image" style={LineImage}>
                     <img src={lineImage} alt='leaves' style={{width:'100%'}}></img>
                 </div>

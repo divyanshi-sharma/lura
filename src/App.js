@@ -1,14 +1,20 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
-import MainPage from './pages/main'
+import MainPage from './pages/main';
+import ShopPage from './pages/shop';
+import { BrowserRouter as Router, Route, Switch, withRouter } from 'react-router-dom';
 
 function App() {
   return (
+    <Router>
     <div className="App">
-      <MainPage />
+      <Switch>
+        <Route exact path='/' component={MainPage}/>
+        <Route path='/shop' component={ShopPage} />
+      </Switch>
     </div>
+    </Router>
   );
 }
 
-export default App;
+export default withRouter(App);
