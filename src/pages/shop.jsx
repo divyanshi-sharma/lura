@@ -4,6 +4,11 @@ import CustomFooter from '../components/footer'
 import { Breadcrumb, Icon, Rate, Input } from 'antd';
 import img_1 from '../img/NAMIHOFFMAN_112419FABRIC-19.png'
 import img_main from '../img/main_show_pic.png'
+import ShopCarousel from '../components/shop_carousel'
+
+const pics = [
+    '../img/NAMIHOFFMAN_112419FABRIC-19.png', '../img/main_show_pic.png'
+]
 
 
 export default class ShopPage extends Component {
@@ -36,7 +41,7 @@ export default class ShopPage extends Component {
                             <img src={img_1} style={{height: '120px', width:'120px'}}></img>
                         </div>
                         <div className="main-pic" style={{flex: 0.5}}>
-                            <img src={img_main} style={{height:'700px'}}></img>
+                            
                         </div>
                         <div className="details" style={{flex: 0.4, padding:'20px 0',
                         display:'flex', flexDirection:'column'}}>
@@ -85,10 +90,11 @@ export default class ShopPage extends Component {
                         </div>
                     </div>
                     <div className="creations" style={{height:'500px'}}>
-
                     </div>
                 </div>
             </div>
         )
     }
 }
+
+//<img src={img_main} style={{height:'700px'}}></img> <ShopCarousel pics={pics}/>

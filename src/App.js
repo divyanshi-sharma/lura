@@ -3,6 +3,7 @@ import './App.css';
 import MainPage from './pages/main';
 import ShopPage from './pages/shop';
 import { BrowserRouter as Router, Route, Switch, withRouter } from 'react-router-dom';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
   return (

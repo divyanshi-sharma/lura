@@ -1,0 +1,27 @@
+@media screen and (min-width: 801px) {
+    .main-container {
+        top: 20vh;
+    }
+    .main-text {
+      font-size: 40px;
+      padding: 80px;
+      height: 60vh;
+    }
+    text {
+        top: 50vh;
+    }
+  }
+
+@media screen and (max-width: 800px) {
+    .main-container {
+        top: 10vh;
+    }
+    .main-text {
+      font-size: 20px;
+      padding: 30px;
+      height: 30vh;
+    }
+    text {
+        top:30vh;
+    }
+  }

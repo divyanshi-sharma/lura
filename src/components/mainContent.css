@@ -3,7 +3,7 @@
     display: flex;
     flex-direction: column;
     height: 3450px;
-    width: 1440px
+    width: 100vw
 }
 
 .img_1 {
@@ -113,4 +113,15 @@
     z-index: 1;
     left: -15vw; 
     top: -690px
+}
+@media screen and (min-width: 801px) {
+    text {
+        font-size: 40px;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    text {
+        font-size: 30px;
+    }
 }
