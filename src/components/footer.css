@@ -1,13 +1,12 @@
 .footer-container {
-    height: 780px; 
     background-color: white; 
     display: flex;
     flex-direction: column;
 }
-.line-1 {
+.line-1{
     display: flex;
     justify-content: space-between;
-    margin: 8vw 5vw;
+    margin: 8vw 5vw !important;
 }
 .subscribe {
     color: #357F59; 
@@ -15,15 +14,6 @@
     font-family: Medium;
     letter-spacing: 0; 
     width: 40%; 
-}
-.subscribe > text {
-    font-size: 36px; 
-    font-family: Arial, Helvetica, sans-serif;
-}
-.subscribe > p {
-    font-size: 20px;
-    line-height: 1.2;
-    font-family: Arial, Helvetica, sans-serif;
 }
 
 .more-info {
@@ -34,9 +24,51 @@
     flex-direction: row;
 }
 
+
 .line-2 {
     background: #ABD3BB 0% 0% no-repeat padding-box;
     height: 112.5px;
     display: flex;
     justify-content: space-between;
+    align-items: center;
+}
+
+@media screen and (min-width: 801px) {
+    .footer-container {
+        min-height: 820px;
+    }
+    .subscribe > text {
+        font-size: 36px;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+    .subscribe > p {
+        font-size: 20px;
+        line-height: 1.2;
+    }
+    .icons > .anticon {
+        margin: 0 10px;
+        font-size: 30px;
+    }
+}
+
+@media screen and (max-width: 800px) { 
+    .footer-container {
+        min-height: 700px;
+    }
+    .subscribe > text {
+        font-size: 25px;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+    .subscribe > p {
+        font-size: 15px;
+        line-height: 1.2;
+    }
+    .more-info > .col > ul {
+        font-size: 10px;
+        padding: 0;
+    }
+    .icons > .anticon {
+        margin: 0 10px;
+        font-size: 20px;
+    }
 }

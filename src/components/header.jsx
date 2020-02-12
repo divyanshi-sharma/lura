@@ -11,8 +11,6 @@ export default class CustomHeader extends Component {
         super(props)
     }
     render(){
-        const props = this.props 
-        console.log(props)
         return(
             <Navbar bg="light" expand="lg" style={{padding: '2% 3%'}} fixed="top">
             <Navbar.Brand href="/" style={{width:'65%', display:'flex'}}>

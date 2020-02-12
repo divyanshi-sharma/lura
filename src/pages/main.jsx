@@ -4,7 +4,7 @@ import CustomFooter from '../components/footer'
 import lineImage from '../img/vickholius-nugroho-jt6QxZwSOCQ-unsplash.jpg'
 import storyImage from '../img/steinar-engeland-BfMbxUu0EGE-unsplash.jpg'
 import MainContent from '../components/mainContent'
-import sample from '../video/sampleVideo.mp4'
+import video_offical from '../video/LURAvideo.mp4'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import './main.css'
@@ -50,7 +50,7 @@ export default class MainPage extends Component {
                     <Col md={7}>
                     <div className="video-container" >
                         <video id='displayingVideo' loop style={video} autoPlay>
-                            <source src={sample} type='video/mp4'/>
+                            <source src={video_offical} type='video/mp4'/>
                             Your browser does not support the video tag.
                         </video>
                     </div>
