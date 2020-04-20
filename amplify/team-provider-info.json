@@ -1,0 +1,15 @@
+{
+    "real": {
+        "awscloudformation": {
+            "AuthRoleName": "amplify-lura-real-105304-authRole",
+            "UnauthRoleArn": "arn:aws:iam::765915584795:role/amplify-lura-real-105304-unauthRole",
+            "AuthRoleArn": "arn:aws:iam::765915584795:role/amplify-lura-real-105304-authRole",
+            "Region": "us-east-2",
+            "DeploymentBucketName": "amplify-lura-real-105304-deployment",
+            "UnauthRoleName": "amplify-lura-real-105304-unauthRole",
+            "StackName": "amplify-lura-real-105304",
+            "StackId": "arn:aws:cloudformation:us-east-2:765915584795:stack/amplify-lura-real-105304/4b431830-57ef-11ea-8f83-0a3e4885fce2",
+            "AmplifyAppId": "dvv89gr93vdd7"
+        }
+    }
+}

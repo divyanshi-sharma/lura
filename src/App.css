@@ -1,4 +1,7 @@
 .App {
   text-align: center;
   overflow: hidden;
+  font-family: urbane-rounded, sans-serif;
+  font-style: normal;
+  font-weight: 100;
 }

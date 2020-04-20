@@ -57,8 +57,10 @@ export default class MainPage extends Component {
                     </Col>
                     <Col md={5}>
                         <div className="storyBoard">
-                            <div className="story-title" style={{fontWeight:'bold', fontSize:'30px'}}>Our Story</div>
-                            <p style={{padding:'0 20px'}}>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste quas et sequi corrupti quis debitis repellendus perferendis, corporis aliquam labore dolore animi suscipit quia odit, reprehenderit perspiciatis consectetur, error iure.</p>
+                            <div className="story-title" style={{fontWeight:'bold', fontSize:'30px'}}>What's Coming</div>
+                            <p style={{padding:'0 20px', fontSize:'20px'}}>We’re working modernising the fashion industry by 
+                            digitising the relationship between brands and manufacturers. 
+                            Stay updated to rebuild your supply chain in the most sustainable way.</p>
                         </div>
                     </Col>
 
