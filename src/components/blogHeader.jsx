@@ -16,8 +16,9 @@ export default class BlogHeader extends Component {
             <Navbar expand="lg"
             style={{padding: '2% 3%', 
             backgroundImage: `url(${lineImage})`, height:'100px'}}>
+                <Navbar.Brand />
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
-                <Navbar.Collapse id="basic-navbar-nav" style={{justifyContent:'space-between'}}>
+                <Navbar.Collapse id="basic-navbar-nav" style={{justifyContent:'flex-end'}}>
                     <Nav class='blog-navs'>
                         <Nav.Link href='#'>Brand Profiles</Nav.Link>
                         <Nav.Link href='/shop'>LURA Updates</Nav.Link>

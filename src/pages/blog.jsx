@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import  HeaderImage from '../img/lura.png';
 import BlogHeader from '../components/blogHeader'
+import Footer from '../components/footer'
 import Card from 'react-bootstrap/Card'
 import Button from 'react-bootstrap/Button'
 import Img1 from '../img/office.png'; 
@@ -45,7 +46,7 @@ export default class BlogPage extends Component{
             <div>
             <BlogHeader />
             <div className="main-blog-content">
-                <div className="title" style={{height:'150px',
+                <div className="title" style={{paddingTop: '30px',
                  color:'#00000091', display:'flex', alignItems:'center', justifyContent:'center'}}>
                     <h1>MOST POPULAR</h1>
                 </div>
@@ -55,12 +56,12 @@ export default class BlogPage extends Component{
                 {this.state.articles.map((article, i) => {
                     return(
                     <Card className='info-card' key={i} 
-                    style={{width:"70%", margin:'10px 5px', flexDirection:'row', border:'none', borderBottom:'3px solid rgba(0,0,0,0.25)', 
-                    padding:'30px'}}>
-                        <img src={article.url} style={{width:'25%'}}/>
-                        <Card.Body style={{display:'flex', alignItems:'flex-start',
-                        justifyContent:'center', flexDirection:'column'}}>
-                            <Card.Title style={{color:'#00000091', fontSize:'30px', fontWeight:'bold'}}>{article.title}</Card.Title>
+                    style={{width:"80%", margin:'10px 5px', flexDirection:'row', border:'none', borderBottom:'3px solid rgba(0,0,0,0.25)', 
+                    padding:'30px', alignItems:'center'}}>
+                        <img src={article.url} style={{flex:'1'}}/>
+                        <Card.Body style={{display:'flex', flex:'2', alignItems:'flex-start',
+                        justifyContent:'center', flexDirection:'column', textAlign:'left'}}>
+                            <Card.Title style={{color:'#00000091', fontWeight:'bold'}}>{article.title}</Card.Title>
                             <Card.Text style={{color:'#98D3B1', fontWeight:'700'}}>Posted on {article.date}</Card.Text>
                             <Button variant="outline-info">Read More</Button>
                         </Card.Body>
@@ -69,6 +70,7 @@ export default class BlogPage extends Component{
             </div>
                 </div>
             </div>
+                <Footer/>
             </div>
         )
     }

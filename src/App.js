@@ -12,7 +12,7 @@ function App() {
     <div className="App">
       <Switch>
         <Route exact path='/' component={MainPage}/>
-        <Route path='/shop' component={ShopPage} />
+        <Route path='/shop'/>
         <Route path='/blog' component={BlogPage} />
       </Switch>
     </div>
@@ -21,3 +21,5 @@ function App() {
 }
 
 export default withRouter(App);
+
+//<Route path='/shop' component={ShopPage} />

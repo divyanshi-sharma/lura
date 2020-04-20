@@ -1,3 +1,31 @@
-.inf0-card {
-    flex-direction: row;
+@media screen and (min-width: 801px) {
+    .article > .card-title, .h5 {
+        font-size: 30px !important;
+    }
+    .card-text {
+        font-size: 20px;
+    }
+    .card-body > .btn {
+        font-size: 1rem;
+    }
+    .info-card > img {
+        width: 25%;
+        height: 25%;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .article > .card-title, .h5 {
+        font-size: 15px !important;
+    }
+    .card-text {
+        font-size: 10px;
+    }
+    .card-body > .btn {
+        font-size: 10px;
+    }
+    .info-card > img {
+        width: 50%;
+        height: 50%;
+    }
 }
