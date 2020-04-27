@@ -33,7 +33,8 @@ export default class CustomHeader extends Component {
                     <Nav style={{fontSize:'22px'}}>
                         {/*<Nav.Link href='#'>About Us</Nav.Link>*/}
                         {/*<Nav.Link href='/shop'>Shop</Nav.Link>*/}
-                        <Nav.Link href="/blog">Blog</Nav.Link>
+                        <Nav.Link href="/manufactures">Manufactures</Nav.Link>
+                        <Nav.Link href='/blog'>Blog</Nav.Link>
                         <Nav.Item>
                             <Nav.Link eventKey='open-modal' onSelect={this.onLoginClick}>Sign In</Nav.Link>
                             <SignInModal ref={this.loginModalRef}></SignInModal>
