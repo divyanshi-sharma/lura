@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import CustomHeader from '../components/header'
 import CustomFooter from '../components/footer'
 import lineImage from '../img/vickholius-nugroho-jt6QxZwSOCQ-unsplash.jpg'
-import storyImage from '../img/steinar-engeland-BfMbxUu0EGE-unsplash.jpg'
 import MainContent from '../components/mainContent'
 import video_offical from '../video/LURAvideo.mp4'
 import Row from 'react-bootstrap/Row'
@@ -49,7 +48,7 @@ export default class MainPage extends Component {
                 <Row style={videoSection}>
                     <Col md={7}>
                     <div className="video-container" >
-                        <video id='displayingVideo' loop style={video} autoPlay>
+                        <video id='displayingVideo' loop style={video} autoPlay controls>
                             <source src={video_offical} type='video/mp4'/>
                             Your browser does not support the video tag.
                         </video>
@@ -96,20 +95,3 @@ const video = {
     borderRadius: '6px',
     backgroundColor:'#F8F8F8'
 }
-/**
- *                 <div className="line-image" style={LineImage}>
-                    <img src={lineImage} alt='leaves' style={{width:'100%'}}></img>
-                </div>
-
- *                 <div className='story-board' style={storyBoard}>
-                    <div style={{background:`url(${storyImage}) padding-box`,
-                    backgroundSize:'contain',
-                    height:'100%', display:'flex', 
-                    alignItems: 'center', 
-                    justifyContent: 'space-around',}}>
-                        <div style={{width:'20px', lineHeight:1}}><text style={{color: 'white', fontSize:'80px', width:'30%'}}>Our Story</text></div>
-                        <div className='video-block'
-                        style={{height:'80%', width:'60%', backgroundColor:'rgba(255,255,255,0.5)'}}></div>
-                    </div>
-                </div>
- */

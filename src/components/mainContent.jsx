@@ -7,7 +7,7 @@ import Image5 from '../img/actionvance-UvisJMJmqAU-unsplash.jpg'
 import Image6 from '../img/leone-venter-mTkXSSScrzw-unsplash.jpg'
 import Image7 from '../img/skyla-design-qPE-5Nn7xwU-unsplash.jpg'
 import Image8 from '../img/ellieelien-gT4CnGJTido-unsplash.jpg'
-import { Row, Col } from 'antd'
+import { Row } from 'antd'
 import './mainContent.sass'
 
 export default class MainContent extends Component {
@@ -19,7 +19,7 @@ export default class MainContent extends Component {
                 </Row>
                 <Row>
                     <div className='img_1'>
-                        <img src={Image1} style={{width: '57vw'}}></img>
+                        <img src={Image1} style={{width: '57vw'}} alt='1'></img>
                     </div>
                     <div className="text-block-1">
                         <div className="step-one">
@@ -32,15 +32,15 @@ export default class MainContent extends Component {
                         </div>
                     </div>
                     <div className="img_2">
-                        <img src={Image2} style={{width: '50vw'}}></img>
+                        <img src={Image2} style={{width: '50vw'}} alt='2'></img>
                     </div>
                     <div className="img_3">
-                        <img src={Image3} style={{width: '32vw', transform: 'rotate(90deg)' }}></img>
+                        <img src={Image3} alt='3' style={{width: '32vw', transform: 'rotate(90deg)' }}></img>
                     </div>
                 </Row>
                 <Row>
                     <div className="img_4">
-                        <img src={Image4} style={{width: '40vw' }}></img>
+                        <img src={Image4} style={{width: '40vw'}} alt='4'></img>
                     </div>
                     <div className="text-block-2">
                     <div className="step-two">
@@ -51,15 +51,15 @@ export default class MainContent extends Component {
                         </div>
                     </div>
                     <div className="img_5">
-                        <img src={Image5} style={{width: '20vw', height: '60vh'}}></img>
+                        <img src={Image5} alt='5' style={{width: '20vw', height: '60vh'}}></img>
                     </div>
                 </Row>
                 <Row>
                     <div className="img_6">
-                        <img src={Image6} style={{width: '45vw' }}></img>
+                        <img src={Image6} alt='6' style={{width: '45vw' }}></img>
                     </div>
                     <div className="img_7">
-                        <img src={Image7} style={{ width: '41vw'}}></img>
+                        <img src={Image7} style={{ width: '41vw'}} alt='7'></img>
                     </div>
                     <div className="text-block-3">
                     <div className="step-three">
@@ -70,7 +70,7 @@ export default class MainContent extends Component {
                     </div>
                     </div>
                     <div className="img_8">
-                        <img src={Image8} style={{width: '30vw' }}></img>
+                        <img src={Image8} style={{width: '30vw' }} alt='8'></img>
                     </div>
                 </Row>
             </div>

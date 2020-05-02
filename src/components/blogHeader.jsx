@@ -10,7 +10,7 @@ export default class BlogHeader extends Component {
             <div>
             <Navbar expand="lg" >
                 <Navbar.Brand href="/" style={{width:'65%', display:'flex'}}>
-                    <img src={HeaderImage} alt='header-image' style={{width:'35%', height:'80%'}}/>
+                    <img src={HeaderImage} alt='header' style={{width:'35%', height:'80%'}}/>
                 </Navbar.Brand>
             </Navbar>
             <Navbar expand="lg"

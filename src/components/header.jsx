@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import  HeaderImage from '../img/lura.png';
 import { Icon } from 'antd'
-import { Link } from 'react-router-dom'
-import lineImage from '../img/vickholius-nugroho-jt6QxZwSOCQ-unsplash.jpg'
 import './header.css'
 import {Navbar, Nav }from 'react-bootstrap'
 import SignInModal from '../components/auth/signinModal'
@@ -25,14 +23,15 @@ export default class CustomHeader extends Component {
     render(){
         return(
             <Navbar bg="light" expand="lg" style={{padding: '2% 3%'}} fixed="top">
-            <Navbar.Brand href="/" style={{width:'65%', display:'flex'}}>
+            <Navbar.Brand href="/" style={{width:'40%', display:'flex'}}>
                 <img src={HeaderImage} alt='header-image' style={{width:'35%', height:'80%'}}/>
             </Navbar.Brand>
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav" style={{justifyContent:'flex-end'}}>
-                    <Nav style={{fontSize:'22px'}}>
-                        {/*<Nav.Link href='#'>About Us</Nav.Link>*/}
-                        {/*<Nav.Link href='/shop'>Shop</Nav.Link>*/}
+                    <Nav className='header-navs'>
+                        <Nav.Link href='/login'>Login</Nav.Link>
+                        <Nav.Link href='/signup'>Sign Up</Nav.Link>
+                        <Nav.Link href='/shop'>Shop</Nav.Link>
                         <Nav.Link href="/manufactures">Manufactures</Nav.Link>
                         <Nav.Link href='/blog'>Blog</Nav.Link>
                         <Nav.Item>

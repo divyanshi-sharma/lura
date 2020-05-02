@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Input, Button, Icon} from 'antd' 
+import { Input, Button} from 'antd' 
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import { Auth } from 'aws-amplify'

@@ -22,3 +22,7 @@ a > .shop {
 a > .shop:hover {
     color: black;
 }
+.header-navs > .nav-link, 
+.header-navs > .nav-item > .nav-link {
+    width: fit-content !important;
+}

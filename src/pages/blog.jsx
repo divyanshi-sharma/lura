@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import  HeaderImage from '../img/lura.png';
 import BlogHeader from '../components/blogHeader'
 import Footer from '../components/footer'
 import Card from 'react-bootstrap/Card'
@@ -58,7 +57,7 @@ export default class BlogPage extends Component{
                     <Card className='info-card' key={i} 
                     style={{width:"80%", margin:'10px 5px', flexDirection:'row', border:'none', borderBottom:'3px solid rgba(0,0,0,0.25)', 
                     padding:'30px', alignItems:'center'}}>
-                        <img src={article.url} style={{flex:'1'}}/>
+                        <img src={article.url} style={{flex:'1'}} alt={`article-${i}`}/>
                         <Card.Body style={{display:'flex', flex:'2', alignItems:'flex-start',
                         justifyContent:'center', flexDirection:'column', textAlign:'left'}}>
                             <Card.Title style={{color:'#00000091', fontWeight:'bold'}}>{article.title}</Card.Title>
