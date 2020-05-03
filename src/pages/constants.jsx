@@ -39,3 +39,5 @@ export const manuInfo = [{
     price: '$10 - $15 per yard',
     Brands: 'ABCeco, Boutique, madeconscious',
 }]
+
+//shop page constants

@@ -3,20 +3,21 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@ant-design/icons": "^4.0.6",
-    "@material-ui/core": "^4.9.0",
-    "@material-ui/icons": "^4.5.1",
-    "antd": "^3.25.2",
-    "aws-amplify": "^2.2.5",
-    "aws-amplify-react": "^3.1.6",
+    "@ant-design/icons": "^4.1.0",
+    "@material-ui/core": "^4.9.12",
+    "@material-ui/icons": "^4.9.1",
+    "antd": "^3.26.16",
+    "aws-amplify": "^2.3.0",
+    "aws-amplify-react": "^3.1.9",
     "bootstrap": "^4.4.1",
-    "node-sass": "^4.13.1",
+    "moment": "^2.24.0",
+    "node-sass": "^4.14.0",
     "python": "0.0.4",
-    "react": "^16.12.0",
-    "react-bootstrap": "^1.0.0-beta.16",
-    "react-dom": "^16.12.0",
+    "react": "^16.13.1",
+    "react-bootstrap": "^1.0.1",
+    "react-dom": "^16.13.1",
     "react-router-dom": "^5.1.2",
-    "react-scripts": "^3.3.0"
+    "react-scripts": "^3.4.1"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -39,5 +40,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "eslint-plugin-react-hooks": "^4.0.0"
   }
 }

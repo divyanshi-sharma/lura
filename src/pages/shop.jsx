@@ -4,7 +4,9 @@ import CustomFooter from '../components/footer'
 import { Breadcrumb, Icon, Rate, Input } from 'antd';
 import img_1 from '../img/NAMIHOFFMAN_112419FABRIC-19.png'
 import img_main from '../img/main_show_pic.png'
-import ShopCarousel from '../components/shop_carousel'
+import ControlledCarousel from '../components/shop_carousel'
+import Row from 'react-bootstrap/Row'
+import Col from 'react-bootstrap/Col'
 
 const pics = [
     '../img/NAMIHOFFMAN_112419FABRIC-19.png', '../img/main_show_pic.png'
@@ -30,20 +32,11 @@ export default class ShopPage extends Component {
                             <Breadcrumb.Item>Bamboo</Breadcrumb.Item>
                         </Breadcrumb>
                     </div>
-                    <div className="shop-content" style={{borderColor:"black", height:'750px', margin:'20px 50px', display:'flex'}}>
-                        <div className="small-pics" style={{flex: 0.1, height:'700px', 
-                        display:"flex",flexDirection:'column', alignItems:'center', justifyContent:'center'}}>
-                            <img src={img_1} style={{height: '120px', width:'120px'}}></img>
-                            <img src={img_1} style={{height: '120px', width:'120px'}}></img>
-                            <img src={img_1} style={{height: '120px', width:'120px'}}></img>
-                            <img src={img_1} style={{height: '120px', width:'120px'}}></img>
-                            <img src={img_1} style={{height: '120px', width:'120px'}}></img>
-                            <img src={img_1} style={{height: '120px', width:'120px'}}></img>
-                        </div>
-                        <div className="main-pic" style={{flex: 0.5}}>
-                            
-                        </div>
-                        <div className="details" style={{flex: 0.4, padding:'20px 0',
+                    <Row className="shop-content" style={{borderColor:"black", height:'750px', margin:'20px 50px', display:'flex'}}>
+                        <Col md={8} className='controlled-carousel' style={{}}>
+                            <ControlledCarousel />
+                        </Col>
+                        <Col md={4} className="details" style={{padding:'20px 0',
                         display:'flex', flexDirection:'column'}}>
                             <div className="title" style={{display:"flex", flexDirection:'column', 
                             paddingBottom:'20px',borderBottom:'#707070 solid 1px'}}>
@@ -87,8 +80,8 @@ export default class ShopPage extends Component {
                                     <Input style={{backgroundColor:'#EDEDEDBA', borderStyle:'none',height:'55px', width:'80px', margin:'10px 10px'}}/> in.
                                 </div>
                             </div>
-                        </div>
-                    </div>
+                        </Col>
+                    </Row>
                     <div className="creations" style={{height:'500px'}}>
                     </div>
                 </div>
