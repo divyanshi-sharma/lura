@@ -13,9 +13,9 @@ var count = 0
 
 export function SideMenu () {
     return(
-<Menu mode="inline" style={{ height: '100%', borderRight: 0, width:'256'}} multiple={true}>
+<Menu mode="verticle" style={{ height: '100%', borderRight: 0, width:'256'}} multiple={true}>
     <h3 style={{padding:'40px 40px 20px 50px', fontSize:'30px'}}>Filter By</h3>
-    <SubMenu key='composition' title={<span style={{fontSize:'25px', padding:'10px 0'}}>Fabric Composition</span>} mode="inline" style={{padding:'20px 0'}}>
+    <SubMenu key='composition' title={<span style={{fontSize:'25px', padding:'10px 0'}}>Fabric Composition</span>} mode='vertical' style={{padding:'20px 0'}}>
         {options.map((list,i)=>{return(
             <Menu.ItemGroup key={`g${i}`} title={<p style={{paddingTop:'20px', fontSize:'20px'}}>{list[0]}</p>}>
                 {list.slice(1).map((option)=>{
@@ -62,7 +62,7 @@ export function SideMenu () {
         })}
     </SubMenu>
     <SubMenu key='prices' title={<span style={{fontSize:'25px'}}>Price Per Yard</span>}
-    style={{padding:'20px 0'}}>
+    style={{padding:'20px 0'}} mode='inline'>
         {prices.map((option)=>{count++;
             return(
             <Menu.Item key={count} style={{paddingLeft:0, fontSize:'20px', display:'flex'}}>

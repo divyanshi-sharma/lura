@@ -17,9 +17,9 @@ export default class MainContent extends Component {
                 <Row style={{padding:'40px', marginTop:'100px'}}>
                     <text style={{fontSize:'40px'}}>HOW WE WORK</text>
                 </Row>
-                <Row>
+                <Row className='row-1'>
                     <div className='img_1'>
-                        <img src={Image1} style={{width: '57vw'}} alt='1'></img>
+                        <img src={Image1} style={{width: '40vw'}} alt='1'></img>
                     </div>
                     <div className="text-block-1">
                         <div className="step-one">
@@ -32,15 +32,15 @@ export default class MainContent extends Component {
                         </div>
                     </div>
                     <div className="img_2">
-                        <img src={Image2} style={{width: '50vw'}} alt='2'></img>
+                        <img src={Image2} style={{width: '30vw'}} alt='2'></img>
                     </div>
                     <div className="img_3">
-                        <img src={Image3} alt='3' style={{width: '32vw', transform: 'rotate(90deg)' }}></img>
+                        <img src={Image3} alt='3' style={{width: '25vw', transform: 'rotate(90deg)' }}></img>
                     </div>
                 </Row>
-                <Row>
+                <Row className='row-2'>
                     <div className="img_4">
-                        <img src={Image4} style={{width: '40vw'}} alt='4'></img>
+                        <img src={Image4} style={{width: '30vw'}} alt='4'></img>
                     </div>
                     <div className="text-block-2">
                     <div className="step-two">
@@ -54,12 +54,12 @@ export default class MainContent extends Component {
                         <img src={Image5} alt='5' style={{width: '20vw', height: '60vh'}}></img>
                     </div>
                 </Row>
-                <Row>
+                <Row className='row-3'>
                     <div className="img_6">
-                        <img src={Image6} alt='6' style={{width: '45vw' }}></img>
+                        <img src={Image6} alt='6' style={{width: '35vw' }}></img>
                     </div>
                     <div className="img_7">
-                        <img src={Image7} style={{ width: '41vw'}} alt='7'></img>
+                        <img src={Image7} style={{ width: '35vw'}} alt='7'></img>
                     </div>
                     <div className="text-block-3">
                     <div className="step-three">
@@ -70,7 +70,7 @@ export default class MainContent extends Component {
                     </div>
                     </div>
                     <div className="img_8">
-                        <img src={Image8} style={{width: '30vw' }} alt='8'></img>
+                        <img src={Image8} style={{width: '20vw' }} alt='8'></img>
                     </div>
                 </Row>
             </div>

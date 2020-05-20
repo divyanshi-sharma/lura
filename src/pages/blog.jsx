@@ -3,28 +3,19 @@ import BlogHeader from '../components/blogHeader'
 import Footer from '../components/footer'
 import Card from 'react-bootstrap/Card'
 import Button from 'react-bootstrap/Button'
-import Img1 from '../img/office.png'; 
-import Img2 from '../img/closet.png'; 
-import Img3 from '../img/sincerely-media-9nhxEa3PK30-unsplash.png'
-import Img4 from '../img/sports.png'
+import Img1 from '/Users/yujiaxie/Desktop/LURA/src/img/521588778326_.pic.jpg'; 
+import Img2 from '../img/khakkis.jpg'
+
 import './blog.css'
 
 const articles = [{
-    title: "HOW SUSTAINABLE IS YOUR LIFESTYLE?", 
+    title: "Lura's Beginning", 
     url: Img1,
-    date: 'Feb 27, 2020'
+    date: 'May 6, 2020'
 }, {
-    title:'TIPS FOR STARTING YOUR SUSTAINABLE BRAND', 
+    title: "Why Should You Produce Sustainably?", 
     url: Img2, 
-    date: 'Feb. 23, 2020'
-}, {
-    title: 'OUR FAVORITE SUSTAINABLE FABRICS', 
-    url: Img3, 
-    date: 'Feb 20, 2020'
-}, {
-    title: 'THE FUTURE OF SUSTAINABLE SPORTSWEAR', 
-    url: Img4, 
-    date: 'Feb 17, 2020'
+    date: "May 20, 2020"
 }]
 
 
@@ -60,9 +51,9 @@ export default class BlogPage extends Component{
                         <img src={article.url} style={{flex:'1'}} alt={`article-${i}`}/>
                         <Card.Body style={{display:'flex', flex:'2', alignItems:'flex-start',
                         justifyContent:'center', flexDirection:'column', textAlign:'left'}}>
-                            <Card.Title style={{color:'#00000091', fontWeight:'bold'}}>{article.title}</Card.Title>
+                            <Card.Title style={{color:'#00000091'}}>{article.title}</Card.Title>
                             <Card.Text style={{color:'#98D3B1', fontWeight:'700'}}>Posted on {article.date}</Card.Text>
-                            <Button variant="outline-info">Read More</Button>
+                            <Button variant="outline-info" href='/article/second'>Read More</Button>
                         </Card.Body>
                     </Card>)
                 })}
@@ -74,3 +65,5 @@ export default class BlogPage extends Component{
         )
     }
 }
+
+//<img src={article.url} style={{flex:'1'}} alt={`article-${i}`}/>

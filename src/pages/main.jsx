@@ -85,7 +85,7 @@ const LineImage = {
 
 const videoSection = {
     height: '500px', 
-    backgroundColor: 'aliceblue',
+    backgroundColor: '#fbf6f2',
     alignItems:'center'
 }
 

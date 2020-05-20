@@ -11,7 +11,7 @@ export default class CustomFooter extends Component {
             <div className="footer-container">
                 <Row className="line-1">
                     <Col className="subscribe" xs={12} lg={7}>
-                        <text>BE THE FIRST TO KNOW WHEN WE LAUNCH!</text>
+                        <text>Be the first to know when we launch</text>
                         <p>Enter your email so that you can be informed when we launch. 
                             We promise we will only communicate important updates!
                         </p>

@@ -4,12 +4,8 @@ import { SideMenu } from '../components/manuMenu'
 import ManuCard from '../components/manuCard'
 import lineImage from '../img/vickholius-nugroho-jt6QxZwSOCQ-unsplash.jpg'
 import { Layout, Button } from 'antd';
-import Card from 'react-bootstrap/Card'
-import Row from 'react-bootstrap/Row'
-import Col from 'react-bootstrap/Col'
 import './manufactures.css'
 import * as Constants from './constants'
-import { BookOutlined, EnvironmentFilled } from '@ant-design/icons'
 
 const { Header, Sider, Content } = Layout;
 
@@ -35,10 +31,10 @@ export default class Manufacture extends Component {
                         <SideMenu />
                         </Sider>
                         <Content style={{display:'flex', flexDirection:'column', justifyContent:'center', width:'100%', alignItems:'center',
-                    backgroundColor:'rgb(250, 244, 227)', height:'fit-content', zIndex:'-10'}}>
+                    backgroundColor:'rgb(250, 244, 227)', height:'fit-content'}}>
                             {manuInfo.map((info, i)=>{
                                 return(
-                                    <ManuCard info={info}/>
+                                    <ManuCard info={info} index={i}/>
                                 )
                             })}
                         </Content>
