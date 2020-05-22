@@ -11,11 +11,13 @@ import './blog.css'
 const articles = [{
     title: "Lura's Beginning", 
     url: Img1,
-    date: 'May 6, 2020'
+    date: 'May 6, 2020', 
+    href: '/article/first'
 }, {
     title: "Why Should You Produce Sustainably?", 
     url: Img2, 
-    date: "May 20, 2020"
+    date: "May 20, 2020",
+    href: '/article/second'
 }]
 
 
@@ -53,7 +55,7 @@ export default class BlogPage extends Component{
                         justifyContent:'center', flexDirection:'column', textAlign:'left'}}>
                             <Card.Title style={{color:'#00000091'}}>{article.title}</Card.Title>
                             <Card.Text style={{color:'#98D3B1', fontWeight:'700'}}>Posted on {article.date}</Card.Text>
-                            <Button variant="outline-info" href='/article/second'>Read More</Button>
+                            <Button variant="outline-info" href={article.href}>Read More</Button>
                         </Card.Body>
                     </Card>)
                 })}

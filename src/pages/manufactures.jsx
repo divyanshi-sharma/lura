@@ -31,7 +31,7 @@ export default class Manufacture extends Component {
                         <SideMenu />
                         </Sider>
                         <Content style={{display:'flex', flexDirection:'column', justifyContent:'center', width:'100%', alignItems:'center',
-                    backgroundColor:'rgb(250, 244, 227)', height:'fit-content'}}>
+                    backgroundColor:'#FEF9F6', height:'fit-content'}}>
                             {manuInfo.map((info, i)=>{
                                 return(
                                     <ManuCard info={info} index={i}/>

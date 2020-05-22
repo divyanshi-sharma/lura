@@ -3,13 +3,15 @@ import { BookOutlined, EnvironmentFilled, BookFilled } from '@ant-design/icons'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import Button from 'react-bootstrap/Button'
+import Modal from 'react-bootstrap/Modal'
 import './manuCard.css'
 export default class Card extends React.Component {
     constructor(props){
         super(props)
         this.state = {
             info: null,
-            saved: localStorage.getItem(`savedArticle-${this.props.index}`) || false
+            saved: localStorage.getItem(`savedArticle-${this.props.index}`) || false,
+            show: false,
         }
     }
     handleClick = (e) => {
@@ -21,6 +23,12 @@ export default class Card extends React.Component {
     componentDidUpdate = () => {
         console.log('updated', this.state.saved)
         localStorage.setItem(`savedArticle-${this.props.index}`, this.state.saved)
+    }
+    handleButtonClick = () => {
+        this.setState({show:true})
+    }
+    handleClose = () => {
+        this.setState({show:false})
     }
     render(){
         const {info} = this.props
@@ -44,8 +52,20 @@ export default class Card extends React.Component {
                             <ul><span>Average Price: </span>{info.price}</ul>
                             <ul><span>Brands worked with: </span>{info.Brands}</ul>
                             </Col>
-                            <Col md={3} style={{display:'flex', justifyContent:'flex-end', alignItems:'flex-start'}}>
-                                <Button variant="outline-info">More Info</Button>
+                            <Col md={3} style={{display:'flex', justifyContent:'space-between', flexDirection:'column'}}>
+                                <Button variant="outline-info" href='/manufacture-database/info-1'>More Info</Button>
+                                <Button variant='outline-success' onClick={this.handleButtonClick}>Contact</Button>
+                                <Modal show={this.state.show} onHide={this.handleClose} centered style={{border:0}}>
+                                    <Modal.Header closeButton style={{backgroundColor:'rgba(171, 211, 187,0.5)'}}>
+                                        <Modal.Title>CONTACT</Modal.Title>
+                                    </Modal.Header>
+                                    <Modal.Body style={{backgroundColor:'rgba(171, 211, 187,0.5)', color:'rgba(0,0,0,0.75)'}}>
+                                        <div><span style={{fontWeight:'bold',fontSize:'20px'}}>Email</span> {info.email}</div>
+                                        <div><span style={{fontWeight:'bold',fontSize:'20px'}}>Tel.</span>  {info.tel}</div>
+                                        <div><span style={{fontWeight:'bold',fontSize:'20px'}}>Contact Name: </span>  {info.contactName}</div>
+                                        <div><span style={{fontWeight:'bold',fontSize:'20px'}}>Brands worked with: </span>  {info.Brands}</div>
+                                    </Modal.Body>
+                                </Modal>
                             </Col>
                         </Row>
                         </div>

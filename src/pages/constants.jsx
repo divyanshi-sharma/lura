@@ -17,6 +17,9 @@ export const manuInfo = [{
     Minimum: '100 yards', 
     price: '$10 - $15 per yard',
     Brands: 'ABCeco, Boutique, madeconscious',
+    email: 'abcmanufacturing@gmail.com',
+    tel:'(692)716-7452',
+    contactName: 'Sally Smith',
 }, {
     name: 'ABC Manufacturing',
     saved: false,
@@ -24,6 +27,9 @@ export const manuInfo = [{
     Minimum: '100 yards', 
     price: '$10 - $15 per yard',
     Brands: 'ABCeco, Boutique, madeconscious',
+    email: 'abcmanufacturing@gmail.com',
+    tel:'(692)716-7452',
+    contactName: 'Sally Smith',
 }, {
     name: 'ABC Manufacturing',
     saved: false,
@@ -31,6 +37,9 @@ export const manuInfo = [{
     Minimum: '100 yards', 
     price: '$10 - $15 per yard',
     Brands: 'ABCeco, Boutique, madeconscious',
+    email: 'abcmanufacturing@gmail.com',
+    tel:'(692)716-7452',
+    contactName: 'Sally Smith',
 }, {
     name: 'ABC Manufacturing',
     saved: false,
@@ -38,6 +47,9 @@ export const manuInfo = [{
     Minimum: '100 yards', 
     price: '$10 - $15 per yard',
     Brands: 'ABCeco, Boutique, madeconscious',
+    email: 'abcmanufacturing@gmail.com',
+    tel:'(692)716-7452',
+    contactName: 'Sally Smith',
 }]
 
 //shop page constants

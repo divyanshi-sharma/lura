@@ -29,10 +29,10 @@ export default class CustomHeader extends Component {
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav" style={{justifyContent:'flex-end'}}>
                     <Nav className='header-navs'>
-                        <Nav.Link href='/login'>Login</Nav.Link>
+                        {/*<Nav.Link href='/login'>Login</Nav.Link>
                         <Nav.Link href='/signup'>Sign Up</Nav.Link>
-                        <Nav.Link href='/shop'>Shop</Nav.Link>
-                        <Nav.Link href="/manufactures">Manufactures</Nav.Link>
+        <Nav.Link href='/shop'>Shop</Nav.Link>
+                        <Nav.Link href="/manufactures">Manufactures</Nav.Link>*/}
                         <Nav.Link href='/blog'>Blog</Nav.Link>
                         <Nav.Item>
                             <Nav.Link eventKey='open-modal' onSelect={this.onLoginClick}>Sign In</Nav.Link>

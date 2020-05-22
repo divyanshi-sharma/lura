@@ -9,7 +9,7 @@
     margin: 8vw 5vw !important;
 }
 .subscribe {
-    color: #357004; 
+    color: #365247; 
     text-align: left;
     font-family: Medium;
     letter-spacing: 0; 
@@ -19,14 +19,14 @@
 .more-info {
     text-align: left;
     font-weight: bold;
-    color: #357004;
+    color: #365247;
     display: flex;
     flex-direction: row;
 }
 
 
 .line-2 {
-    background: #357004 0% 0% no-repeat padding-box;
+    background: #365247 0% 0% no-repeat padding-box;
     height: 112.5px;
     display: flex;
     justify-content: space-between;

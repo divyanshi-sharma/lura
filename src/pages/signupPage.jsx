@@ -4,6 +4,13 @@ import Button from 'react-bootstrap/Button'
 import Nav from 'react-bootstrap/Nav'
 import { Divider } from 'antd'
 import API from '../utils/API'
+const CircularJSON = require('circular-json')
+const config = {
+    headers: {
+        "Access-Control-Allow-Origin": "*",
+        'Content-Type': 'application/x-www-form-urlencoded'
+    }
+}
 
 export default class SignUpPage extends React.Component {
     constructor(props){
@@ -17,7 +24,8 @@ export default class SignUpPage extends React.Component {
         this.produced = React.createRef();
     }
 
-    handleClick = () => {
+    handleClick = (e) => {
+        e.preventDefault();
         if(this.firstname.current.value && this.lastname.current.value &&
              this.email.current.value && this.password.current.value){
             this.userRegister()
@@ -26,17 +34,19 @@ export default class SignUpPage extends React.Component {
         }
     }
     userRegister = () => {
-        console.log('postin')
-        try {API.post('/register', {
-            firstname: this.firstname,
-            lastname: this.lastname, 
-            username: this.email, 
-            password: this.password, 
-            apparel: this.apparel, 
-            employees: this.employees, 
-            produced: this.produced
-            
-        })} catch(err) {
+        console.log(this.firstname.current.value, this.lastname.current.value,
+            this.email.current.value,this.password.current.value,)
+        try { const res = API.post('/register',CircularJSON.stringify({
+            firstName: this.firstname.current.value,
+            lastName: this.lastname.current.value, 
+            username: this.email.current.value, 
+            password: this.password.current.value, 
+            apparel: this.apparel.current.value, 
+            employees: this.employees.current.value, 
+            produced: this.produced.current.value
+        }), config)
+        console.log(JSON.stringify(res))
+    } catch(err) {
             console.log(err)
         }
     }

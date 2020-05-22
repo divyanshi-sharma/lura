@@ -4,6 +4,7 @@ import MainPage from './pages/main';
 import ShopPage from './pages/shop';
 import BlogPage from './pages/blog';
 import ManuPage from './pages/manufactures';
+import ManuInfo from './pages/manuInfo'
 import LoginPage from './pages/loginPage'
 import SignupPage from './pages/signupPage'
 import BlogContent1 from './pages/blogContent'
@@ -22,6 +23,7 @@ function App() {
         <Route exact path='/article/first' component={BlogContent1} />
         <Route exact path='/article/second' component={BlogContent2} />
         <Route path='/manufactures' component={ManuPage}/>
+        <Route exact path='/manufacture-database/info-1'component={ManuInfo}/>
         <Route path='/login' component={LoginPage}/>
         <Route path='/signup' component={SignupPage}/>}
 
