@@ -2,6 +2,7 @@
     background-color: white; 
     display: flex;
     flex-direction: column;
+    height: fit-content;
 }
 .line-1{
     display: flex;
@@ -26,7 +27,7 @@
 
 
 .line-2 {
-    background: #365247 0% 0% no-repeat padding-box;
+    background: #365247 0% 0% no-repeat padding-box !important;
     height: 112.5px;
     display: flex;
     justify-content: space-between;
@@ -34,9 +35,6 @@
 }
 
 @media screen and (min-width: 801px) {
-    .footer-container {
-        height: fit-content;
-    }
     .subscribe > text {
         font-size: 36px;
     }
@@ -51,9 +49,6 @@
 }
 
 @media screen and (max-width: 800px) { 
-    .footer-container {
-        height: fit-content;
-    }
     .subscribe > text {
         font-size: 25px;
     }

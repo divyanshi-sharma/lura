@@ -6,7 +6,7 @@
     "@ant-design/icons": "^4.1.0",
     "@material-ui/core": "^4.9.14",
     "@material-ui/icons": "^4.9.1",
-    "antd": "^3.26.16",
+    "antd": "^3.26.17",
     "aws-amplify": "^2.3.0",
     "aws-amplify-react": "^3.1.9",
     "axios": "^0.19.2",
@@ -22,7 +22,7 @@
     "react-scripts": "^3.4.1"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "set HTTPS=true&&PORT=443&&react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "deploy": "aws s3 cp --recursive ./build s3://lura.textiles.website",

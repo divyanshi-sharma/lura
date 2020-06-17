@@ -3,31 +3,69 @@ import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button'
 import Nav from 'react-bootstrap/nav'
 import API from '../utils/API'
-const CircularJSON = require('circular-json')
+import { BrowserRouter as Router, Switch, Redirect } from 'react-router-dom';
+
+const config = {
+    headers: {
+        "Access-Control-Allow-Origin": "https://localhost:3000",
+        'Content-Type': 'application/json'
+    },
+    withCredentials:true
+}
 
 export default class LoginPage extends React.Component {
     constructor(props){
         super(props)
         this.username = React.createRef()
         this.password = React.createRef()
+        this.state = {
+            redirect: false
+        }
     }
     handleClick=(e)=>{
         e.preventDefault();
         this.userLogin();
     }
     userLogin = () => {
-        try{
-            const res = API.post('/authenticate/login', CircularJSON.stringify({
-                username: this.username, 
-                password: this.password
-            }))
-        } catch (err){
-            console.log(err)
+         API.post('/authenticate/login', {
+                username: this.username.current.value, 
+                password: this.password.current.value
+            }, config)
+            .then(res => {
+                alert('Login Successfully')
+                this.setRedirect()
+            })
+            .catch(err => {
+                if(err.response){
+                    if(err.response.status == "403"){
+                        alert('User already logged in')
+                        this.setRedirect()
+                    } else if(err.response.status == '401'){
+                        alert('Invalid username or password')
+                    } else if(err.response.status == "400"){
+                        alert("Server error, please check your network connection")
+                    }
+                } else {
+                    alert(err.message)
+                }
+            })
+    }
+    setRedirect = () =>{
+        this.setState({redirect:true})
+    }
+    renderRedirect = () =>{
+        if(this.state.redirect){
+            return(
+            <Switch>
+                <Redirect from='/login' to='/'/>
+            </Switch>
+            )
         }
     }
     render(){
         return(
             <div style={{display:'flex', justifyContent:'center'}}>
+                {this.renderRedirect()}
                 <Form style={{textAlign:'left', width:"50%"}}>
                     <Form.Group controlId="formBasicEmail">
                         <Form.Label>Email address</Form.Label>

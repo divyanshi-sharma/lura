@@ -5,6 +5,8 @@ import Card from 'react-bootstrap/Card'
 import Button from 'react-bootstrap/Button'
 import Img1 from '/Users/yujiaxie/Desktop/LURA/src/img/521588778326_.pic.jpg'; 
 import Img2 from '../img/khakkis.jpg'
+import Img3 from '../img/WechatIMG236.jpeg'
+import Img4 from '../img/WechatIMG199.jpeg'
 
 import './blog.css'
 
@@ -18,6 +20,16 @@ const articles = [{
     url: Img2, 
     date: "May 20, 2020",
     href: '/article/second'
+},{
+    title:'How can we sustainably design trends?',
+    url: Img3, 
+    date: 'May 29, 2020', 
+    href:'/article/third'
+},{
+    title:'Why Do Social Justice and Environmental Justice Go Hand in Hand?',
+    url: Img4,
+    date:'June 06, 2020',
+    href:'/article/fourth'
 }]
 
 

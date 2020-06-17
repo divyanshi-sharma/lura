@@ -4,6 +4,7 @@ import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import Button from 'react-bootstrap/Button'
 import Modal from 'react-bootstrap/Modal'
+import API from '../utils/API'
 import './manuCard.css'
 export default class Card extends React.Component {
     constructor(props){
@@ -14,6 +15,15 @@ export default class Card extends React.Component {
             show: false,
         }
     }
+//from API 
+    getSavedfromDB = () => {
+        API.get('/manufacturers/save').then(res=>console.log(res)).catch(err=>console.log(err))
+    }
+
+    componentDidMount = () => {
+        this.getSavedfromDB()
+    }
+//end
     handleClick = (e) => {
         console.log(this.state.saved)
         console.log(e.target)
