@@ -4,15 +4,29 @@ import SideMenu  from '../components/manuMenu'
 import ManuCard from '../components/manuCard'
 import lineImage from '../img/vickholius-nugroho-jt6QxZwSOCQ-unsplash.jpg'
 import { Layout, Button } from 'antd';
+import API from '../utils/API'
 import './manufactures.css'
-import * as Constants from './constants'
 
 const { Header, Sider, Content } = Layout;
 
 
-const manuInfo = Constants.manuInfo
 
 export default class Manufacture extends Component {
+    constructor(){
+        super()
+        this.state={
+            manufacturers: []
+        }
+    }
+    async getManufacturerfromDB () {
+        await API.get('/manufacturers/all', {withCredentials:true})
+        .then(res => {console.log(res.data)
+            this.setState({manufacturers:res.data.manufacturers})})
+        .catch(err=>console.log(err))
+    }
+    componentDidMount = () => {
+        this.getManufacturerfromDB()
+    }
     render(){
 
         return(
@@ -29,11 +43,11 @@ export default class Manufacture extends Component {
                         </Sider>
                         <Content style={{display:'flex', flexDirection:'column', justifyContent:'center', width:'100%', alignItems:'center',
                     backgroundColor:'#FEF9F6', height:'fit-content'}}>
-                            {manuInfo.map((info, i)=>{
+                            {this.state.manufacturers.length != 0 ? this.state.manufacturers.map((manu, i)=>{
                                 return(
-                                    <ManuCard info={info} index={i}/>
+                                    <ManuCard info={manu} index={i}/>
                                 )
-                            })}
+                            }):<h3>There is no manufacturer in the database...</h3>}
                         </Content>
                     </Layout>
                 </Layout>

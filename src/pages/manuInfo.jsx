@@ -6,6 +6,7 @@ import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import Button from 'react-bootstrap/Button'
 import Modal from 'react-bootstrap/Modal'
+import API from '../utils/API'
 import { BookOutlined } from '@ant-design/icons'
 import { Typography, Divider } from 'antd'
 import img1 from '../img/蒙版组3.png'
@@ -15,7 +16,7 @@ import img4 from '../img/蒙版组-2.png'
 import cer1 from '../img/download.png'
 import cer2 from '../img/leed_logo.png'
 
-
+/*
 const infos = {
     Brands: 'ABCeco, Boutique, madeconscious',
     email: 'abcmanufacturing@gmail.com',
@@ -26,13 +27,16 @@ const infos = {
     leadTime: '3 weeks',
     Bio:'Manufacture name is a factory located in los angeles, at xxxxxxx address. The factory is a family run factory, with founders Avantika Raikar and Regina morfin. Since founded in 2013, the factory has worked with companies such as xxx and xxx.  jksdjksdh kljasdljakklsjd kajlsdk;sakdas lkasdsadjkkljskald a;lskdsld ;lkasdjlask lajksdskld akjdskladkla.'
 }
+*/
 
 
 export default class ManuInfo extends Component {
-    constructor(){
-        super()
+    constructor(props){
+        super(props)
         this.state = {
-            show: false
+            show: false,
+            id: this.props.match.params.id,
+            infos: null
         }
     }
     handleClick = () => {
@@ -41,7 +45,20 @@ export default class ManuInfo extends Component {
     handleClose = () => {
         this.setState({show: false})
     }
+    async getManufacturerfromDB () {
+        console.log(this.state.id, this.props.match.params.ManuId)
+        await API.get(`https://lura-services.herokuapp.com/manufacturers/info/${this.props.match.params.ManuId}`, {withCredentials:true})
+        .then(res=>{console.log(res)
+            this.setState({infos: res.data.info})})
+        .catch(err=>console.log(err))
+    }
+    componentDidMount = () => {
+        this.getManufacturerfromDB()
+    }
+
     render(){
+        const infos = this.state.infos
+        if(infos){
         return(
             <div>
                 <CustomHeader />
@@ -50,8 +67,10 @@ export default class ManuInfo extends Component {
                 </div>
                 <div className="title-line" style={{position:'relative', top:'80px', display:'flex', width:'90%'}}>
                     <Col className='avatar' md={6} style={{paddingLeft:'100px'}}> 
-                    <div style={{fontSize:'30px', color:'white', fontWeight:'bold',height:'100px', width:'100px',
-                     backgroundColor:'darkgreen', borderRadius:'10px'}}>ABC</div>
+                    {infos.avatar?
+                    <div style={{height:'100px', width:'100px',borderRadius:'10px',backgroundImage:`url(${infos.avatar})`}}></div>
+                    :<div style={{fontSize:'30px', color:'white', fontWeight:'bold',height:'100px', width:'100px',
+                     backgroundColor:'darkgreen', borderRadius:'10px'}}>{infos.name}</div>}
                     </Col>
                     <Col md={6} style={{top:'50px', display:'flex', justifyContent:'flex-end'}}>
                         <div className="contact-button" style={{paddingRight:'30px'}}>
@@ -122,6 +141,8 @@ export default class ManuInfo extends Component {
                 </div>
                 <CustomFooter />
             </div>
-        )
+        )} else {
+            return(<div></div>)
+        }
     }
 }
