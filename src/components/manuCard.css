@@ -2,7 +2,6 @@
     position: relative;
     display: flex;
     flex-direction: column;
-    min-width: 0;
     word-wrap: break-word;
     background-color: #fff;
     background-clip: border-box;
@@ -22,4 +21,14 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+}
+@media screen and (min-width: 801px) {
+    .card {
+        min-width: 700px !important;
+    }
+}
+@media screen and (max-width: 800px) {
+    .card {
+        min-width: 300px !important;
+    }
 }

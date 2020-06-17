@@ -12,7 +12,9 @@ import BlogContent2 from './pages/blogContent2'
 import BlogContent3 from './pages/blogContent3'
 import BlogContent4 from './pages/blogContent4'
 import AccountPage from './pages/account'
-import CreateManuPage from './pages/createManu'
+import CreateManuPage from './admin/createManu'
+import EditManuPage from './admin/editManu'
+import AdminPage from './admin/adminPage'
 import { BrowserRouter as Router, Route, Switch, withRouter } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -34,7 +36,8 @@ function App() {
         <Route path='/login' component={LoginPage}/>
         <Route path='/signup' component={SignupPage}/>
         <Route path='/admin/create-manufacturer' component={CreateManuPage}/>
-
+        <Route path='/admin/edit/:ManuId' component={EditManuPage}/>
+        <Route path='/admin' component={AdminPage}/>
       </Switch>
     </div>
     </Router>

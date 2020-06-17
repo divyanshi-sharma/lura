@@ -6,6 +6,7 @@ import lineImage from '../img/vickholius-nugroho-jt6QxZwSOCQ-unsplash.jpg'
 import { Layout, Button } from 'antd';
 import API from '../utils/API'
 import './manufactures.css'
+import { ErrorSection } from 'aws-amplify-react';
 
 const { Header, Sider, Content } = Layout;
 
@@ -15,20 +16,25 @@ export default class Manufacture extends Component {
     constructor(){
         super()
         this.state={
-            manufacturers: []
+            manufacturers: [],
+            saved: []
         }
     }
     async getManufacturerfromDB () {
         await API.get('/manufacturers/all', {withCredentials:true})
-        .then(res => {console.log(res.data)
-            this.setState({manufacturers:res.data.manufacturers})})
+        .then(res => {this.setState({manufacturers:res.data.manufacturers})})
+        .catch(err=>console.log(err))
+    }
+    async getSavedfromDB () {
+        await API.get('/manufacturers/save', {withCredentials:true})
+        .then(res=>{this.setState({saved:res.data.saved})})
         .catch(err=>console.log(err))
     }
     componentDidMount = () => {
         this.getManufacturerfromDB()
+        this.getSavedfromDB()
     }
     render(){
-
         return(
             <div>
                 <Layout>
@@ -45,7 +51,7 @@ export default class Manufacture extends Component {
                     backgroundColor:'#FEF9F6', height:'fit-content'}}>
                             {this.state.manufacturers.length != 0 ? this.state.manufacturers.map((manu, i)=>{
                                 return(
-                                    <ManuCard info={manu} index={i}/>
+                                    <ManuCard info={manu} index={i} saved={this.state.saved}/>
                                 )
                             }):<h3>There is no manufacturer in the database...</h3>}
                         </Content>

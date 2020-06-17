@@ -55,6 +55,7 @@ export default class CreateManuPage extends React.Component {
                     </Form.File>
                 </Form>
                 <Button onClick={this.handleClick} variant='outline-info'>Submit</Button>
+                <Button href='/admin' variant='success' style={{margin:'20px 0'}}>Back</Button>
             </div>
         )
     }
