@@ -46,7 +46,7 @@ export default class Card extends React.Component {
         this.setState({show:true})
     }
     async handleSave () {
-        await API.post(`/manufacturers/save/${this.props.info._id}`)
+        await API.post(`/manufacturers/save/${this.props.info._id}`,{},{withCredentials:true})
         .then(res=>{console.log(res)})
         .catch(err=>console.log(err))
     }

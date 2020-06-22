@@ -82,7 +82,7 @@ export default class LoginPage extends React.Component {
                     <Button type='submit' variant='outline-info' onClick={this.handleClick}>submit</Button>
                     <Nav variant="pills" type="submit" style={{margin:"20px"}}>
                         <Nav.Item>
-                            <Nav.Link href='/login'>Register</Nav.Link>
+                            <Nav.Link href='/signup'>Register</Nav.Link>
                         </Nav.Item>
                     </Nav>
                     </Form>

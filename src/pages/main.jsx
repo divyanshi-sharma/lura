@@ -41,9 +41,9 @@ export default class MainPage extends Component {
                 </div>
                 <div className="content" style={{position:'relative', top:'100px'}}>
                 <div className="main-text" style={{position:'relative', display:'flex', justifyContent:'center'}} >
-                    <text 
+                    <p 
                     style={{ color:'#357F59', width:'63%', position:'fixed', zIndex:-1}}>
-                        YOUR ONE-STOP SHOP TO SOURCE AND ORDER SUSTAINABLE TEXTILES </text>
+                        YOUR ONE-STOP SHOP TO SOURCE AND ORDER SUSTAINABLE TEXTILES </p>
                 </div>
                 <Row style={videoSection}>
                     <Col md={7}>

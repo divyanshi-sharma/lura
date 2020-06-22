@@ -19,17 +19,18 @@ export default class CreateManuPage extends React.Component {
         this.avatar = React.createRef()
     }
     async putManuIntoDB () {
+        const fd = new FormData();
+        fd.append('image', this.avatar.current.value)
         await API.post('/manufacturers/admin/create', {
             name:this.name.current.value, 
-            avatar: null, 
-            bio: this.avatar.current.value
+            avatar: this.avatar.current.value, 
+            bio: this.bio.current.value
         }, config)
         .then(res=>alert('created successfully'))
         .catch(err=>console.log(err))
     }
     handleClick = (e) => {
         e.preventDefault()
-        console.log(this.name.current.value)
         if(this.name.current.value) {
             this.putManuIntoDB()
         } else {

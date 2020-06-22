@@ -19,7 +19,7 @@ export default class BlogHeader extends Component {
                 <Navbar.Brand />
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav" style={{justifyContent:'flex-end'}}>
-                    <Nav class='blog-navs'>
+                    <Nav className='blog-navs'>
                         <Nav.Link href='#'>Brand Profiles</Nav.Link>
                         <Nav.Link href='/shop'>LURA Updates</Nav.Link>
                         <Nav.Link href="/blog">Fabrics</Nav.Link>

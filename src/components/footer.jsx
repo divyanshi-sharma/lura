@@ -14,9 +14,9 @@ export default class CustomFooter extends Component {
     render(){
         return(
             <div className="footer-container">
-                {this.props?<></>:<Row className="line-1">
+                <Row className="line-1">
                     <Col className="subscribe" xs={12} lg={7}>
-                        <text>Be the first to know when we launch</text>
+                        <p>Be the first to know when we launch</p>
                         <p>Enter your email so that you can be informed when we launch. 
                             We promise we will only communicate important updates!
                         </p>
@@ -34,10 +34,10 @@ export default class CustomFooter extends Component {
                             <ul>{'TERMS & CONDITIONS'}</ul>
                         </Col>
                     </Col>
-                </Row>}
+                </Row>
                 <Row className="line-2">
                     <Col xs={7}>
-                    <text style={{color:'white', fontSize:'15px', padding:'50px'}}>© Lura 2019</text>
+                    <p style={{color:'white', fontSize:'15px', padding:'50px'}}>© Lura 2019</p>
                     </Col>
                     <Col xs={5} className="icons" 
                     style={{display:'flex', color: 'white', fontSize: '20px'}}>

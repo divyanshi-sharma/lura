@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button'
 import API from '../utils/API'
+import Col from 'react-bootstrap/Col'
+import Row from 'react-bootstrap/Row'
 
 
 const config = {
@@ -31,7 +33,8 @@ export default class EditManuPage extends React.Component {
             info: null,
             overview: null,
             contact: null,
-            error: null
+            error: null,
+            published: false
         }
 
     }
@@ -40,11 +43,19 @@ export default class EditManuPage extends React.Component {
         .then(res=>this.setState(
             {info:res.data.info, 
             overview:res.data.info.overview,
-            contact: res.data.info.contact}))
+            contact: res.data.info.contact,
+            published: res.data.info.published
+        }))
         .catch(err=>console.log(err))
     }
     componentDidMount = () => {
         this.getManuInfo()
+    }
+    publishManu = () => {
+        console.log(this.props)
+        API.patch(`/manufacturers/admin/publish/${this.props.match.params.ManuId}${this.state.published?"unpublish=true":""}`,{},config)
+        .then(res=>alert('Manufacturer published'))
+        .catch(err=>this.setState({error: err}))
     }
     async updateName () {
         await API.patch(`/manufacturers/admin/edit/${this.props.match.params.ManuId}/name`, {
@@ -86,59 +97,71 @@ export default class EditManuPage extends React.Component {
         this.updateOverview()
         if(this.state.error === null){alert('updated all information')}
     }
+    handlePublish = () => {
+        this.publishManu()
+    }
     render(){
         if(this.state.info){
         return(
-            <div style={{top:'100px',position:'relative', display:'flex',alignItems:'center',flexDirection:'column'}}>
+            <div style={{margin:'40px', display:'flex',alignItems:'center',flexDirection:'column'}}>
                 <h3>Edit Manufacturer</h3>
                 <Form>
-                    <Form.Group>
-                        <Form.Label>Name</Form.Label>
-                        <Form.Control type='text' ref={this.name} placeholder={this.state.info.name}/>
-                    </Form.Group>
-                    <Form.Group>
-                        <Form.Label>Bio</Form.Label>
-                        <Form.Control type='text' ref={this.bio} placeholder={this.state.info.bio}/>
-                    </Form.Group>
-                    <Form.Group>
-                        <Form.Label>Fabric Types</Form.Label>
-                        <Form.Control type='text' ref={this.types} placeholder={this.state.overview.fabricTypes}/>
-                    </Form.Group>
-                    <Form.Group>
-                        <Form.Label>Minimums</Form.Label>
-                        <Form.Control type='text' ref={this.minimum} placeholder={this.state.overview.minimum}/>
-                    </Form.Group>
-                    <Form.Group>
-                        <Form.Label>Pricing</Form.Label>
-                        <Form.Control type='text' ref={this.pricing} placeholder={this.state.overview.pricing}/>
-                    </Form.Group>
-                    <Form.Group>
-                        <Form.Label>Lead Time</Form.Label>
-                        <Form.Control type='text' ref={this.leadTime} placeholder={this.state.overview.leadTime}/>
-                    </Form.Group>
+                    <Form.Row>
+                        <Form.Group as={Col}>
+                            <Form.Label>Name</Form.Label>
+                            <Form.Control type='text' ref={this.name} placeholder={this.state.info.name}/>
+                        </Form.Group>
+                        <Form.Group as={Col}>
+                            <Form.Label>Bio</Form.Label>
+                            <Form.Control type='text' ref={this.bio} placeholder={this.state.info.bio}/>
+                        </Form.Group>
+                    </Form.Row>
+                    <Form.Row>
+                        <Form.Group as={Col}>
+                            <Form.Label>Fabric Types</Form.Label>
+                            <Form.Control type='text' ref={this.types} placeholder={this.state.overview.fabricTypes}/>
+                        </Form.Group>
+                        <Form.Group as={Col}>
+                            <Form.Label>Minimums</Form.Label>
+                            <Form.Control type='text' ref={this.minimum} placeholder={this.state.overview.minimum}/>
+                        </Form.Group>
+                        <Form.Group as={Col}>
+                            <Form.Label>Pricing</Form.Label>
+                            <Form.Control type='text' ref={this.pricing} placeholder={this.state.overview.pricing}/>
+                        </Form.Group>
+                        <Form.Group as={Col}>
+                            <Form.Label>Lead Time</Form.Label>
+                            <Form.Control type='text' ref={this.leadTime} placeholder={this.state.overview.leadTime}/>
+                        </Form.Group>
+                    </Form.Row>
                     <Form.Group>
                         <Form.Label>Brands Worked With</Form.Label>
                         <Form.Control type='text' ref={this.brands} placeholder={this.state.overview.brandsWorkedWith}/>
                     </Form.Group>
-                    <Form.Group>
-                        <Form.Label>Email</Form.Label>
-                        <Form.Control type='email' ref={this.email} placeholder={this.state.contact.email}/>
-                    </Form.Group>
-                    <Form.Group>
-                        <Form.Label>Tel.</Form.Label>
-                        <Form.Control ref={this.tel} placeholder={this.state.contact.tel}/>
-                    </Form.Group>
-                    <Form.Group>
-                        <Form.Label>Contact name</Form.Label>
-                        <Form.Control ref={this.cName} placeholder={this.state.contact.contactName}/>
-                    </Form.Group>
+                    <Form.Row>
+                        <Form.Group as={Col}>
+                            <Form.Label>Email</Form.Label>
+                            <Form.Control type='email' ref={this.email} placeholder={this.state.contact.email}/>
+                        </Form.Group>
+                        <Form.Group as={Col}>
+                            <Form.Label>Tel.</Form.Label>
+                            <Form.Control ref={this.tel} placeholder={this.state.contact.tel}/>
+                        </Form.Group>
+                        <Form.Group as={Col}>
+                            <Form.Label>Contact name</Form.Label>
+                            <Form.Control ref={this.cName} placeholder={this.state.contact.contactName}/>
+                        </Form.Group>
+                    </Form.Row>
                     <Form.Group>
                         <Form.Label>Location</Form.Label>
                         <Form.Control ref={this.location} placeholder={this.state.contact.location}/>
                     </Form.Group>
 
                 </Form>
-                <Button onClick={this.handleClick} variant='outline-info'>Save Changes</Button>
+                <Row >
+                    <Button onClick={this.handleClick} variant='outline-info' style={{margin:'0 20px'}}>Save Changes</Button>
+                    <Button onClick={this.handlePublish} variant='outline-danger'>{this.state.published?"Unpublish":"Publish"}</Button>
+                </Row>
                 <Button href='/admin' variant='success' style={{margin:'20px 0'}}>Back</Button>
             </div>
         )} else {

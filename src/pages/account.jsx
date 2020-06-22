@@ -7,7 +7,16 @@ import Button from 'react-bootstrap/Button'
 import Modal from 'react-bootstrap/Modal'
 import Form from 'react-bootstrap/Form'
 import API from '../utils/API'
+import { BrowserRouter as Router, Switch, Redirect } from 'react-router-dom';
 
+
+const config = {
+    headers: {
+        "Access-Control-Allow-Origin": "https://localhost:3000",
+        'Content-Type': 'application/json'
+    },
+    withCredentials:true
+}
 
 export default class AccountPage extends Component {
     constructor(props){
@@ -20,6 +29,7 @@ export default class AccountPage extends Component {
             password: null,
             phone: null, 
             saved: null, 
+            redirect: false
         }
     }
     componentDidMount = () => {
@@ -31,13 +41,32 @@ export default class AccountPage extends Component {
             console.log(res)
             this.setState({
                 firstName: res.data.firstName, 
-                lastName: res.data.lastName || " ",
+                lastName: res.data.lastName,
                 email: res.data.username, 
                 password: res.data.password,
                 saved: res.data.savedManufacturers
             })
         })
         .catch(err=>console.log(err))
+    }
+    async handleLogout () {
+        await API.post('/authenticate/logout', {}, config)
+        .then(res=>{
+            alert('Logout Successfully')
+            this.setRedirect()})
+        .catch(err=>console.log(err))
+    }
+    setRedirect = () => {
+        this.setState({redirect:true})
+    }
+    renderRedirect = () => {
+        if(this.state.redirect){
+            return(
+            <Switch>
+                <Redirect from='/account' to='/'/>
+            </Switch>
+            )
+        }
     }
     handleClose = () => {
         this.setState({show: false})
@@ -49,9 +78,11 @@ export default class AccountPage extends Component {
         return(
             <div>
                 <CustomHeader />
-                <div className="account-main" style={{ top:'120px', position:'relative',backgroundColor:'#FBF6F2', height:'80vh'}}>
-                    <div className="account-title">
+                <div className="account-main" style={{ top:'120px', position:'relative',backgroundColor:'#FBF6F2', height:'80vh', padding:'30px'}}>
+                    {this.renderRedirect()}
+                    <div className="account-title" style={{display:'flex',flexDirection:'row', justifyContent:'space-between',padding:'30px'}}>
                         <h3 style={{color:'grey'}}>Hello, {this.state.firstName}</h3>
+                        <Button variant='danger' onClick={this.handleLogout}>Logout</Button>
                     </div>
                     <Row className='account'>
                         <Col md={4} className="account-info">
@@ -95,7 +126,7 @@ export default class AccountPage extends Component {
                     </Row>
                 </div>
                 <div style={{position:'relative', top:'120px'}}>
-                    <CustomFooter props={'without 1st line'}/>
+                    <CustomFooter/>
                 </div>
             </div>
         )

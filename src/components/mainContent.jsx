@@ -15,7 +15,7 @@ export default class MainContent extends Component {
         return(
             <div className='content-container'>
                 <Row style={{padding:'40px', marginTop:'100px'}}>
-                    <text style={{fontSize:'40px'}}>HOW WE WORK</text>
+                    <p style={{fontSize:'40px'}}>HOW WE WORK</p>
                 </Row>
                 <Row className='row-1'>
                     <div className='img_1'>
@@ -23,7 +23,7 @@ export default class MainContent extends Component {
                     </div>
                     <div className="text-block-1">
                         <div className="step-one">
-                            <text>STEP ONE</text>
+                            <p>STEP ONE</p>
                             <p>Order samples! Go through our selection of sustainable fabrics, 
                                 and either use our fabric matcher or self select the samples you love most. 
                                 Our fabric matcher takes your fabric preferences, textures, materials, price points etc 
@@ -44,7 +44,7 @@ export default class MainContent extends Component {
                     </div>
                     <div className="text-block-2">
                     <div className="step-two">
-                        <text>STEP TWO</text>
+                        <p>STEP TWO</p>
                             <p>Once you’ve ordered, choose the best fabric for your designs and place the full orders through out platform. Cut out the hassle of contacting manufacturers by buying the perfect fabric through us. 
                                 We significantly reduce the minimums and deliver a seamless sourcing 
                                 process. </p>
@@ -63,7 +63,7 @@ export default class MainContent extends Component {
                     </div>
                     <div className="text-block-3">
                     <div className="step-three">
-                        <text>STEP THREE</text>
+                        <p>STEP THREE</p>
                             <p>The fabric you order is delivered wherever you want to help you bring 
                                 your designs to life! Simplify your sourcing process with the simplicity 
                                 of our service. </p>

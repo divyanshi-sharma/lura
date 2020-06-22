@@ -41,6 +41,7 @@ export default class AdminPage extends Component {
                             </Card.Header>
                             <Card.Body style={{display:'flex',flexDirection:'column', alignItems:'flex-start'}}>
                                 <Card.Text style={{display:'flex',flexDirection:'column',alignItems:'flex-start'}}>
+                                    <ul>Published: {manu.published?'Yes':'No'}</ul>
                                     <ul>Fabric Types: {manu.overview.fabricTypes}</ul>
                                     <ul>Minimum: {manu.overview.minimum}</ul>
                                     <ul>Pricing: {manu.overview.pricing}</ul>

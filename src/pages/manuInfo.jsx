@@ -16,19 +16,6 @@ import img4 from '../img/蒙版组-2.png'
 import cer1 from '../img/download.png'
 import cer2 from '../img/leed_logo.png'
 
-/*
-const infos = {
-    Brands: 'ABCeco, Boutique, madeconscious',
-    email: 'abcmanufacturing@gmail.com',
-    tel:'(692)716-7452',
-    contactName: 'Sally Smith',
-    price: '$10 - $15 per yard',
-    type: 'cotton, lyocell, cashmere, polyester',
-    leadTime: '3 weeks',
-    Bio:'Manufacture name is a factory located in los angeles, at xxxxxxx address. The factory is a family run factory, with founders Avantika Raikar and Regina morfin. Since founded in 2013, the factory has worked with companies such as xxx and xxx.  jksdjksdh kljasdljakklsjd kajlsdk;sakdas lkasdsadjkkljskald a;lskdsld ;lkasdjlask lajksdskld akjdskladkla.'
-}
-*/
-
 
 export default class ManuInfo extends Component {
     constructor(props){
