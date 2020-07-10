@@ -92,10 +92,10 @@ export default class ManuInfo extends Component {
                     <Row className='fabric-swatches' style={{flexDirection:'column', margin:'30px 0'}}>
                         <div className="fabric-title" style={{textAlign:'left'}}><h3 style={{fontWeight:'bold'}}>Fabric Swatches</h3></div>
                         <Row style={{display:'flex', flexDirection:'row',justifyContent:'space-between', margin:'10px 0'}}>
-                            <img src={img1} style={{width:'15%', height:'15%'}}/>
-                            <img src={img2} style={{width:'15%', height:'15%'}}/>
-                            <img src={img3} style={{width:'15%', height:'15%'}}/>
-                            <img src={img4} style={{width:'15%', height:'15%'}}/>
+                            <img src={img1} style={{width:'15%', height:'15%'}} alt=''/>
+                            <img src={img2} style={{width:'15%', height:'15%'}} alt=''/>
+                            <img src={img3} style={{width:'15%', height:'15%'}} alt=''/>
+                            <img src={img4} style={{width:'15%', height:'15%'}} alt=''/>
                         </Row>
                     </Row>
                     <Row className='manu-bio' style={{margin:'30px 0', backgroundColor:'#FDF8F5', widht:'1000px', padding:'30px'}}>
@@ -108,7 +108,7 @@ export default class ManuInfo extends Component {
                         <div className="certificate-box" style={{width:'70%'}}>
                            <Row style={{alignItems:'center'}}>
                             <Col md={3}>
-                                <img src={cer1} style={{width:'80%'}}/>
+                                <img src={cer1} style={{width:'80%'}} alt=''/>
                             </Col>
                             <Col md={9}>
                                 <Typography.Paragraph style={{fontSize:'12px'}}>The MADE IN GREEN label verifies that an article has been tested for harmful substances. This is carried out  through certification in accordance with STANDARD 100 by OEKO-TEX® or LEATHER STANDARD by OEKO-TEX®. It also guarantees that the textile or leather product has been manufactured using sustainable processes under environmentally-friendly and socially responsible working conditions.</Typography.Paragraph>
@@ -117,7 +117,7 @@ export default class ManuInfo extends Component {
                             <Divider style={{border:"2px solid rgba(0,0,0,0.75)", margin:'10px'}}/>
                             <Row style={{alignItems:'center'}}>
                             <Col md={3}>
-                                <img src={cer2} style={{width:'70%'}}/>
+                                <img src={cer2} style={{width:'70%'}} alt=''/>
                             </Col>
                             <Col md={9}>
                                 <Typography.Paragraph style={{fontSize:'12px'}}>The LEED certification shows that the manufacturing plant itself is sustainable. It ensures that the Carbon Footprint of the entire building is within a certain standard.</Typography.Paragraph>

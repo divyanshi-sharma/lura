@@ -3,6 +3,9 @@
         margin: 40px 200px;
         width: 70%
     }
+    .article-content > figure > img {
+        width:50%
+    }
 
 }
 @media screen and (max-width: 800px) {
@@ -15,6 +18,9 @@
     }
     .ant-typography {
         font-size: 14px;
+    }
+    .article-content > figure > img {
+        width:80%
     }
 
 }
@@ -40,4 +46,9 @@ figcaption {
 .ant-typography > h1 {
     font-weight: bold;
     line-height: 1.5;
+}
+.article-content > figure {
+    display: flex !important;
+    align-items: center;
+    flex-direction: column;
 }

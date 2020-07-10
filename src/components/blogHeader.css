@@ -1,8 +1,8 @@
 .blog-navs {
-    display: flex;
-    flex-direction: row;
     font-size: 22px;
     color: white; 
+    display: flex;
+    align-items: baseline;
 }
 
 .blog-navs > a {
@@ -14,7 +14,10 @@
     color: white; 
 }
 
-.nav-link {
+.blog-navs > .nav-link,
+.blog-navs > .navbar-light,
+.blog-navs > .navbar-nav {
     width: 250px;
     padding: 0;
+    color: white !important
 }

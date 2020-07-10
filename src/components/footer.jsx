@@ -8,9 +8,6 @@ import Button from 'react-bootstrap/Button'
 
 
 export default class CustomFooter extends Component {
-    constructor(props){
-        super(props)
-    }
     render(){
         return(
             <div className="footer-container">
@@ -20,7 +17,7 @@ export default class CustomFooter extends Component {
                         <p>Enter your email so that you can be informed when we launch. 
                             We promise we will only communicate important updates!
                         </p>
-                        <Button href="/signup" variant='outline-success'>Sign Up</Button>
+                        <Button href="/signup" className='btn-darkgreen'>Sign Up</Button>
                     </Col>
                     <Col className="more-info" md={5}>
                         <Col>
@@ -37,7 +34,7 @@ export default class CustomFooter extends Component {
                 </Row>
                 <Row className="line-2">
                     <Col xs={7}>
-                    <p style={{color:'white', fontSize:'15px', padding:'50px'}}>© Lura 2019</p>
+                    <p style={{color:'white', fontSize:'15px'}}>© Lura 2019</p>
                     </Col>
                     <Col xs={5} className="icons" 
                     style={{display:'flex', color: 'white', fontSize: '20px'}}>

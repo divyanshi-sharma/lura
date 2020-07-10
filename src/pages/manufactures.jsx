@@ -3,10 +3,9 @@ import CustomHeader from '../components/header'
 import SideMenu  from '../components/manuMenu'
 import ManuCard from '../components/manuCard'
 import lineImage from '../img/vickholius-nugroho-jt6QxZwSOCQ-unsplash.jpg'
-import { Layout, Button } from 'antd';
+import { Layout } from 'antd';
 import API from '../utils/API'
 import './manufactures.css'
-import { ErrorSection } from 'aws-amplify-react';
 
 const { Header, Sider, Content } = Layout;
 
@@ -49,7 +48,7 @@ export default class Manufacture extends Component {
                         </Sider>
                         <Content style={{display:'flex', flexDirection:'column', justifyContent:'center', width:'100%', alignItems:'center',
                     backgroundColor:'#FEF9F6', height:'fit-content'}}>
-                            {this.state.manufacturers.length != 0 ? this.state.manufacturers.map((manu, i)=>{
+                            {this.state.manufacturers.length !== 0 ? this.state.manufacturers.map((manu, i)=>{
                                 return(
                                     <ManuCard info={manu} index={i} saved={this.state.saved}/>
                                 )

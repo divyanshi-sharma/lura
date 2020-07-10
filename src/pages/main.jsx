@@ -6,32 +6,34 @@ import MainContent from '../components/mainContent'
 import video_offical from '../video/LURAvideo.mp4'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
+import Button from 'react-bootstrap/Button'
 import './main.css'
+import {PageView, initGA} from '../components/Tracking';
+import { Event } from "../components/Tracking";
 
 
 export default class MainPage extends Component {
     constructor(){
         super()
         this.state = {
-            height: 400,
-            sticky: false, 
+            display: false, 
             autoplay: false,
         }
-        this.handleScroll = this.handleScroll.bind(this)
     }
     componentDidMount() {
-        window.addEventListener('scroll', this.handleScroll);
+        initGA('UA-171248811-1');
+        PageView();
      }  
     handleScroll=(e)=>{
-        this.setState({height: 400 - window.scrollY})
-        console.log(400 - window.scrollY)
-        if(400 - window.scrollY<230){
-            this.setState({sticky:true, autoplay: true})
+        console.log(window.scrollY)
+        if(window.scrollY>50){
+            this.setState({display:false, autoplay: true})
         }else {
-            this.setState({sticky:false})
+            this.setState({display:true})
         }
     }
     render(){
+        window.addEventListener('scroll', this.handleScroll);
         return(
             <div >
                 <CustomHeader/>
@@ -44,11 +46,13 @@ export default class MainPage extends Component {
                     <p 
                     style={{ color:'#357F59', width:'63%', position:'fixed', zIndex:-1}}>
                         YOUR ONE-STOP SHOP TO SOURCE AND ORDER SUSTAINABLE TEXTILES </p>
+                    <Button className='btn-darkgreen' style={{boxShadow:'3px 3px 3px 3px rgba(0,0,0,0.125)', 
+                    height:'fit-content', top:'600px', position:'fixed', href:'/signup', display:this.state.display?'block':'none'}} href='/signup'>Sign Up</Button>
                 </div>
                 <Row style={videoSection}>
                     <Col md={7}>
                     <div className="video-container" >
-                        <video id='displayingVideo' loop style={video} autoPlay controls>
+                        <video id='displayingVideo' loop style={video} autoPlay controls onPlay={()=>{Event("video_play", "video auto play starts", 'main page')}}>
                             <source src={video_offical} type='video/mp4'/>
                             Your browser does not support the video tag.
                         </video>

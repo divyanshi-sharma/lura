@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import  HeaderImage from '../img/lura.png';
 import lineImage from '../img/vickholius-nugroho-jt6QxZwSOCQ-unsplash.jpg'
-import {Navbar, Nav }from 'react-bootstrap'
+import { Navbar, Nav }from 'react-bootstrap'
 import './blogHeader.css'
 
 export default class BlogHeader extends Component {
@@ -18,13 +18,13 @@ export default class BlogHeader extends Component {
             backgroundImage: `url(${lineImage})`, height:'100px'}}>
                 <Navbar.Brand />
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
-                <Navbar.Collapse id="basic-navbar-nav" style={{justifyContent:'flex-end'}}>
-                    <Nav className='blog-navs'>
+                <Navbar.Collapse id="basic-navbar-nav" style={{justifyContent:'center'}}>
+                    <Nav className='blog-navs' style={{color:"white"}}>
                         <Nav.Link href='#'>Brand Profiles</Nav.Link>
-                        <Nav.Link href='/shop'>LURA Updates</Nav.Link>
-                        <Nav.Link href="/blog">Fabrics</Nav.Link>
-                        <Nav.Link href="/blog">Build Your brand</Nav.Link>
-                        <Nav.Link href="/blog">Sustainable Practices</Nav.Link>
+                        <Nav.Link href='#'>LURA Updates</Nav.Link>
+                        <Nav.Link href="#">Fabrics</Nav.Link>
+                        <Nav.Link href="#">Build Your brand</Nav.Link>
+                        <Nav.Link href="#">Sustainable Practices</Nav.Link>
                     </Nav>
                 </Navbar.Collapse>
             </Navbar>

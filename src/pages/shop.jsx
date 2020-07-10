@@ -8,15 +8,13 @@ import ControlledCarousel from '../components/shop_carousel'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 
-const pics = [
-    '../img/NAMIHOFFMAN_112419FABRIC-19.png', '../img/main_show_pic.png'
-]
+// const pics = [
+//     '../img/NAMIHOFFMAN_112419FABRIC-19.png', '../img/main_show_pic.png'
+// ]
 
 
 export default class ShopPage extends Component {
-    constructor(){
-        super();
-    }
+
     render(){
         return(
             <div>

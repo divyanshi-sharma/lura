@@ -12,7 +12,6 @@
 .subscribe {
     color: #365247; 
     text-align: left;
-    font-family: Medium;
     letter-spacing: 0; 
     width: 40%; 
 }
@@ -26,6 +25,9 @@
 }
 
 
+.footer-container > .row {
+    margin: 0
+}
 .line-2 {
     background: #365247 0% 0% no-repeat padding-box !important;
     height: 112.5px;

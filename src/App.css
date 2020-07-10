@@ -1,6 +1,17 @@
 .App {
   text-align: center;
-  font-family: urbane-rounded, sans-serif;
+  font-family: PingFang TC, urbane-rounded, sans-serif;
   font-style: normal;
-  font-weight: 100;
+  font-weight: 200;
+  overflow-x: hidden;
+}
+.btn-darkgreen {
+  border-color: #365247 !important;
+  color: #365247 !important;
+  background-color: transparent !important;
+}
+.btn-darkgreen:hover {
+  color: white !important;
+  background-color: #365247 !important;
+  border-color: #365247 !important;
 }
