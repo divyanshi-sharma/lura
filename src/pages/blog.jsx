@@ -4,7 +4,7 @@ import Footer from '../components/footer'
 import Card from 'react-bootstrap/Card'
 import Button from 'react-bootstrap/Button'
 import API from '../utils/API'
-import Fade from 'react-reveal/Fade';
+import {Spin} from 'antd'
 import {PageView, initGA} from '../components/Tracking';
 import { Event } from "../components/Tracking";
 
@@ -38,7 +38,7 @@ export default class BlogPage extends Component{
                 <div className="main-blog-content">
                     <div className="title" style={{padding: '30px',
                      color:'#00000091', display:'flex', alignItems:'center', justifyContent:'center'}}>
-                        <h1>MOST POPULAR</h1>
+                        <h1 style={{fontWeight:'200'}}>MOST POPULAR</h1>
                     </div>
                     <div className="articles">
                     <div style={{display:'flex', flexDirection:'column', 
@@ -51,15 +51,15 @@ export default class BlogPage extends Component{
                                 <img src={article.feature_image} style={{flex:'1'}} alt={`article-${i}`}/>
                                 <Card.Body style={{display:'flex', flex:'2', alignItems:'flex-start',
                                 justifyContent:'center', flexDirection:'column', textAlign:'left'}}>
-                                    <Card.Title style={{color:'#00000091'}}>{article.title}</Card.Title>
-                                    <Card.Text style={{color:'#98D3B1', fontWeight:'700'}}>Posted on {article.published_at.slice(0,10)}</Card.Text>
+                                    <Card.Title style={{color:'#00000091',fontWeight:'200'}}>{article.title.toUpperCase()}</Card.Title>
+                                    <Card.Text style={{color:'#98D3B1', fontWeight:'200'}}>POSTED ON {article.published_at.slice(0,10)}</Card.Text>
                                     <Button className='btn-darkgreen' href={`/blogContent/${article.id}`} onClick={()=>Event("READ",`read article ${article.title}`, 'Blog Page')}>Read More</Button>
                                 </Card.Body>
                             </Card>)
                     })}
                 </div>
                     </div>
-                </div>:<div style={{display:'flex', justifyContent:'center', padding:'40px'}}><h1>Fetching Post...</h1></div>}
+                </div>:<div style={{display:'flex', justifyContent:'center', padding:'40px',color:'#365247 '}}><Spin size="large"/></div>}
                     <Footer/>
                 </div>
             )

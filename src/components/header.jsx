@@ -53,6 +53,8 @@ export default class CustomHeader extends Component {
                     <Nav className='header-navs'>
                         {/*<Nav.Link href='/shop'>Shop</Nav.Link>
                         <Nav.Link href="/manufactures">Manufactures</Nav.Link>*/}
+                        {this.state.user?<Nav.Link href='/account'>My Account</Nav.Link>:<></>}
+                        <Nav.Link href='/fabric-finder'>Fabric Consultation</Nav.Link>
                         <Nav.Link href='/blog'>Blog</Nav.Link>
                         <Nav.Link onClick={this.handleClick}>Log In</Nav.Link>
                         <Modal show={this.state.show} onHide={this.handleClose}>
@@ -64,7 +66,6 @@ export default class CustomHeader extends Component {
                                 </Modal.Body>
                             </Modal>
                         <Nav.Link href='/signup'>Sign Up</Nav.Link>
-                        {this.state.user?<Nav.Link href='/account'>My Account</Nav.Link>:<></>}
                         <Nav.Item><Icon type="search" style={{fontSize:'30px', color:'#707070'}}/></Nav.Item>
                     </Nav>
                 </Navbar.Collapse>

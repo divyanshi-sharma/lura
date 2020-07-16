@@ -11,6 +11,7 @@ import AccountPage from './pages/account'
 import CreateManuPage from './admin/createManu'
 import EditManuPage from './admin/editManu'
 import AdminPage from './admin/adminPage'
+import QuizPage from './pages/quiz/quizPage'
 import { BrowserRouter as Router, Route, Switch, withRouter } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import ReactGA from 'react-ga';
@@ -41,6 +42,7 @@ function App() {
         <Route path='/admin/create-manufacturer' component={CreateManuPage}/>
         <Route path='/admin/edit/:ManuId' component={EditManuPage}/>
         <Route path='/admin' component={AdminPage}/>
+        <Route path='/fabric-finder' component={QuizPage}/>
       </Switch>
     </div>
     </Router>

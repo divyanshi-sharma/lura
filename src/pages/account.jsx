@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import CustomHeader from '../components/header'
 import CustomFooter from '../components/footer'
+import EditModal from '../components/editModal'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import Button from 'react-bootstrap/Button'
@@ -8,7 +9,7 @@ import Modal from 'react-bootstrap/Modal'
 import Form from 'react-bootstrap/Form'
 import API from '../utils/API'
 import { Switch, Redirect } from 'react-router-dom';
-
+import './account.css'
 
 const config = {
     headers: {
@@ -84,21 +85,22 @@ export default class AccountPage extends Component {
             return(
                 <div>
                     <CustomHeader />
-                    <div className="account-main" style={{ top:'120px', position:'relative',backgroundColor:'#FBF6F2', height:'80vh', padding:'30px'}}>
+                    <div className="account-main" style={{backgroundColor:'#FBF6F2', padding:'5vw',minHeight:'90vh'}}>
                         {this.renderRedirect('/')}
-                        <div className="account-title" style={{display:'flex',flexDirection:'row', justifyContent:'space-between',padding:'30px'}}>
-                            <h3 style={{color:'grey'}}>Hello, {this.state.firstName}</h3>
-                            <Button variant='danger' onClick={this.handleLogoutClick}>Logout</Button>
+                        <div className="account-title" style={{display:'flex',flexDirection:'row', justifyContent:'space-between',padding:'30px', top:'10vh', position:'relative'}}>
+                            <Col md={4}></Col>
+                            <Col md={4}><h3 style={{color:'#2B4840'}} >Hello, {this.state.firstName}</h3></Col>
+                            <Col md={4} style={{display:'flex',justifyContent:'flex-end',alignSelf:'baseline'}}><Button variant='danger' onClick={this.handleLogoutClick}>Logout</Button></Col>
                         </div>
                         <Row className='account'>
                             <Col md={4} className="account-info">
                                 <div className="avatar-line" style={{display:'flex',justifyContent:'center',flexDirection:'row', alignItems:'center', height:'30vh'}}>
-                                    <div className="avatar" style={{borderRadius:'50px', backgroundColor:'#4A645C',color:"white", width:'80px', height:'80px'}}>
+                                    <div className="avatar" style={{borderRadius:'50px', backgroundColor:'#4A645C',color:"white", width:'80px', height:'80px',display:'flex',justifyContent:'center',alignItems:'center'}}>
                                         <span style={{fontSize:'35px'}}>{this.state.firstName?this.state.firstName[0]:""}{this.state.lastName?this.state.lastName[0]:""}</span>
                                     </div>
                                     <div style={{color:'#4A645C', marginLeft:'20px'}}>MY ACCOUNT</div>
                                 </div>
-                                <div style={{display:'flex',flexDirection:'column', height:'30vh'}}>
+                                <div style={{display:'flex',flexDirection:'column', height:'10vh'}}>
                                     <Button style={{border:0, color:'grey', backgroundColor:'transparent', textDecoration:'underline', margin:'10px'}} onClick={this.handleOpen}>Saved Manufacturers</Button>
                                         <Modal show={this.state.show} onHide={this.handleClose}>
                                             <Modal.Header closeButton>
@@ -109,31 +111,32 @@ export default class AccountPage extends Component {
                                     <Button style={{border:0, color:'grey', backgroundColor:'transparent', textDecoration:'underline',margin:'10px'}}>My Fabric Matchings</Button>
                                 </div>
                             </Col>
-                            <Col md={1.5} style={{textAlign:'left',display:'flex',flexDirection:'column', marginTop:'15vh'}}>
-                            <div style={{padding:'10px', color:'grey'}}><span style={{paddingRight:'10px'}}>First Name: </span></div>
-                            <div style={{padding:'10px', color:'grey'}}><span style={{paddingRight:'10px'}}>Last Name: </span></div>
-                            <div style={{padding:'10px', color:'grey'}}><span style={{paddingRight:'10px'}}>Email: </span></div>
-                            <div style={{padding:'10px', color:'grey'}}><span style={{paddingRight:'10px'}}>Password: </span></div>
-                            <div style={{padding:'10px', color:'grey'}}><span style={{paddingRight:'10px'}}>Phone: </span></div>
+                            <Col md={2} xs={5} style={{textAlign:'left',display:'flex',flexDirection:'column', marginTop:'10vh'}} className='account-setting-list'>
+                            <div><li>First Name: </li></div>
+                            <div><li>Last Name: </li></div>
+                            <div><li>Email: </li></div>
+                            <div><li >Password: </li></div>
+                            <div><li>Phone: </li></div>
                             </Col>
-                            <Col md={6} className='account-setting' style={{textAlign:'left',display:'flex',flexDirection:'column',marginTop:'15vh'}}>
-                                <div style={{padding:'10px', color:'grey'}}>{this.state.firstName}</div>
-                                <div style={{padding:'10px', color:'grey'}}>{this.state.lastName}</div>
-                                <div style={{padding:'10px', color:'grey', display:'flex'}}>
-                                    <Form.Control placeholder={this.state.email} style={{width:'50%',backgroundColor:'#EBE0D8',borderColor:'#EBE1D9'}}></Form.Control>
+                            <Col md={6} xs={7} className='account-setting' style={{textAlign:'left',display:'flex',flexDirection:'column',marginTop:'10vh'}}>
+                                <div>{this.state.firstName}</div>
+                                <div>{this.state.lastName}</div>
+                                <div>
+                                    <Form.Control placeholder={this.state.email} style={{width:'60%',backgroundColor:'#EBE0D8',borderColor:'#EBE1D9'}}></Form.Control>
+                                    <EditModal type='email'/>
                                 </div>
-                                <div style={{padding:'10px', color:'grey', display:'flex'}}>
-                                    <Form.Control placeholder={this.state.password}  style={{width:'50%',backgroundColor:'#EBE0D8',borderColor:'#EBE1D9'}}></Form.Control>
+                                <div>
+                                    <Form.Control placeholder={this.state.password} style={{width:'60%',backgroundColor:'#EBE0D8',borderColor:'#EBE1D9'}}></Form.Control>
+                                    <EditModal type='password'/>
                                 </div>
-                                <div style={{padding:'10px', color:'grey', display:'flex'}}>
-                                    <Form.Control placeholder={this.state.phone}  style={{width:'50%',backgroundColor:'#EBE0D8',borderColor:'#EBE1D9'}}></Form.Control>
+                                <div>
+                                    <Form.Control placeholder={this.state.phone} style={{width:'60%',backgroundColor:'#EBE0D8',borderColor:'#EBE1D9'}}></Form.Control>
+                                    <EditModal type='phone'/>
                                 </div>
                             </Col>
                         </Row>
                     </div>
-                    <div style={{position:'relative', top:'120px'}}>
-                        <CustomFooter/>
-                    </div>
+                    <CustomFooter footer={'second'}/>
                 </div>
             )
         } else {

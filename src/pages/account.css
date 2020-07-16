@@ -1,0 +1,50 @@
+.account-setting-list > div > li {
+    padding-right: 10px;
+    list-style: none;
+}
+.account-setting-list > div > li:before {
+    content: '* ';
+    font-weight: bold;
+    color:#357F59;
+    padding-right: 10px;
+}
+.account-setting-list > div {
+    padding: 15px 0;
+    color: #999
+}
+.account-setting > div {
+    height: 54px;
+    display: flex;
+    align-items: center;
+}
+.edit-modal > button {
+    color:#2B3934;
+    text-decoration: underline #707070;
+}
+.edit-modal > button > button:hover {
+    color:#345A4C;
+    text-decoration: underline #707070;
+    
+}
+.modal-setting-list > li:before{
+    content: '* ';
+    font-weight: bold;
+    color:#357F59;
+}
+.modal-setting-list > li {
+    list-style: none;
+    padding: 15px 0;
+}
+.modal-setting >input{ 
+    background-color: #FAF6F5;
+    border-radius: 10px;
+    border: none;
+    margin: 15px 0
+}
+.modal-setting >input:focus{ 
+    background-color: #FAF6F5;
+    border-radius: 10px;
+    border: none;
+    margin: 15px 0;
+    outline: none;
+}

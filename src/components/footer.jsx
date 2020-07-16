@@ -8,7 +8,28 @@ import Button from 'react-bootstrap/Button'
 
 
 export default class CustomFooter extends Component {
+    constructor(props){
+        super(props)
+    }
     render(){
+        console.log(this.props.footer)
+        if(this.props.footer){
+            return(
+                <div className='footer-container'>
+                    <Row className="line-2">
+                    <Col xs={7}>
+                    <p style={{color:'white', fontSize:'15px'}}>© Lura 2019</p>
+                    </Col>
+                    <Col xs={5} className="icons" 
+                    style={{display:'flex', color: 'white', fontSize: '20px'}}>
+                        <InstagramOutlined />
+                        <Icon type="twitter" />
+                        <Icon type="facebook" />
+                    </Col>
+                </Row>
+                </div>
+            )
+        } else {
         return(
             <div className="footer-container">
                 <Row className="line-1">
@@ -44,6 +65,6 @@ export default class CustomFooter extends Component {
                     </Col>
                 </Row>
             </div>
-        )
+        )}
     }
 }

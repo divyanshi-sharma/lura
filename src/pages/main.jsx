@@ -44,7 +44,7 @@ export default class MainPage extends Component {
                 <div className="content" style={{position:'relative', top:'100px'}}>
                 <div className="main-text" style={{position:'relative', display:'flex', justifyContent:'center'}} >
                     <p 
-                    style={{ color:'#357F59', width:'63%', position:'fixed', zIndex:-1}}>
+                    style={{ color:'#357F59', width:'63%', position:'fixed', zIndex:-1,fontWeight:100}}>
                         YOUR ONE-STOP SHOP TO SOURCE AND ORDER SUSTAINABLE TEXTILES </p>
                     <Button className='btn-darkgreen' style={{boxShadow:'3px 3px 3px 3px rgba(0,0,0,0.125)', 
                     height:'fit-content', top:'600px', position:'fixed', href:'/signup', display:this.state.display?'block':'none'}} href='/signup'>Sign Up</Button>
@@ -60,7 +60,7 @@ export default class MainPage extends Component {
                     </Col>
                     <Col md={5}>
                         <div className="storyBoard">
-                            <div className="story-title" style={{fontWeight:'bold', fontSize:'30px'}}>What's Coming</div>
+                            <div className="story-title" style={{fontWeight:'bold', fontSize:'30px'}}>WHAT'S COMING</div>
                             <p style={{padding:'0 20px', fontSize:'20px'}}>We’re working modernising the fashion industry by 
                             digitising the relationship between brands and manufacturers. 
                             Stay updated to rebuild your supply chain in the most sustainable way.</p>

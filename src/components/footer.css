@@ -29,7 +29,7 @@
     margin: 0
 }
 .line-2 {
-    background: #365247 0% 0% no-repeat padding-box !important;
+    background: #365247 !important;
     height: 112.5px;
     display: flex;
     justify-content: space-between;
