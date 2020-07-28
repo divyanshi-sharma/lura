@@ -1,0 +1,20 @@
+.side-filter {
+    box-shadow: 3px 3px 8px 0px rgba(0,0,0,0.15);
+    left:0;
+    transition: 0.5s;
+}
+.shop-main {
+    left: 0;
+    transition: 0.5s;
+}
+.shop-control-collapse-col {
+    position: relative;
+    left:0;
+    transition: 0.5s;
+}
+
+@media screen and (min-width: 801px) {
+    .shop-control-collapse-col {
+        display: none;
+    }
+}

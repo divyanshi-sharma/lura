@@ -46,15 +46,15 @@ export default class QuizPage extends React.Component {
                             onClick={()=>this.setState({index:1})}>Start your consultation</Button>
                         </div>
                     </Carousel.Item>
-                    <Carousel.Item style={{backgroundColor:'#FBF6F2',backgroundSize:'cover',height:'100vh'}}>
+                    <Carousel.Item className='quiz-background'>
                         <div style={{display:'flex',justifyContent:'center',alignItems:'center',position:'relative',top:'20vh',flexDirection:'column'}}>
                             <p style={{color:'#44524A',fontSize:'30px'}}>BEFORE WE GET STARTED, TITLE YOUR PROJECT!</p>
                             <p>You can refer to all your projects in "My fabric matchings"</p>
                             <Form.Control style={{backgroundColor:'#F5EBE9',boxShadow:'3px 3px 8px 0px rgba(0, 0, 0, 0.15)',width:'40vw',margin:'10vh'}}></Form.Control>
-                            <Button style={{backgroundColor:'#375247',color:'white',width:'10vw',border:'none',borderRadius:'5px'}} onClick={()=>this.setState({index:2})}>NEXT</Button>
+                            <Button className='move-on-btn' onClick={()=>this.setState({index:2})}>NEXT</Button>
                         </div>
                     </Carousel.Item>
-                    <Carousel.Item style={{backgroundColor:'#FBF6F2',backgroundSize:'cover',height:'100vh'}}>
+                    <Carousel.Item className='quiz-background'>
                         <div style={{display:'flex',justifyContent:'center',alignItems:'center',position:'relative',top:'20vh',flexDirection:'column'}}>
                             <p style={{color:'#44524A',fontSize:'30px'}}>WHAT ARE YOU DESIGNING WITH THIS FABRIC?</p>
                             <Row className='fabric-choice'>
@@ -75,20 +75,20 @@ export default class QuizPage extends React.Component {
                                 <Col><Button variant='pink'>{'Smart casual & Formal dresswear'}</Button></Col>
                                 <Col><Button variant='pink'>Other</Button></Col>
                             </Row>
-                            <Row>
+                            <Row className='lura-tip'>
                                 <strong>Lura tip: </strong><p> if your design matches more than one category, choose all that work!</p>
                             </Row>
                             <Row style={{justifyContent:'center',alignItems:'center'}}>
                                 <Col>
-                                    <Button style={{backgroundColor:'#375247',color:'white',width:'10vw',border:'none',borderRadius:'5px',}} onClick={()=>this.setState({index:1})}>BACK</Button>
+                                    <Button className='move-on-btn' onClick={()=>this.setState({index:1})}>BACK</Button>
                                 </Col>
                                 <Col>
-                                    <Button style={{backgroundColor:'#375247',color:'white',width:'10vw',border:'none',borderRadius:'5px'}} onClick={()=>this.setState({index:3})}>NEXT</Button>
+                                    <Button className='move-on-btn' onClick={()=>this.setState({index:3})}>NEXT</Button>
                                 </Col>
                             </Row>
                         </div>
                     </Carousel.Item>
-                    <Carousel.Item style={{backgroundColor:'#FBF6F2',backgroundSize:'cover',height:'100vh'}}>
+                    <Carousel.Item className='quiz-background'>
                         <div style={{display:'flex',justifyContent:'center',alignItems:'center',position:'relative',top:'20vh',flexDirection:'column'}}>
                             <p style={{color:'#44524A',fontSize:'30px'}}>WHAT KIND OF FEEL ARE YOU LOOKING FOR?</p>
                             <Row>
@@ -131,20 +131,20 @@ export default class QuizPage extends React.Component {
                                     </Button>
                                 </Col>
                             </Row>
-                            <Row>
+                            <Row className='lura-tip'>
                                 <strong>Lura tip: </strong><p>  Choose based on the description that matches what you want, not the image!</p>
                             </Row>
                             <Row style={{justifyContent:'center',alignItems:'center'}}>
                                 <Col>
-                                    <Button style={{backgroundColor:'#375247',color:'white',width:'10vw',border:'none',borderRadius:'5px',}} onClick={()=>this.setState({index:2})}>BACK</Button>
+                                    <Button className='move-on-btn' onClick={()=>this.setState({index:2})}>BACK</Button>
                                 </Col>
                                 <Col>
-                                    <Button style={{backgroundColor:'#375247',color:'white',width:'10vw',border:'none',borderRadius:'5px'}} onClick={()=>this.setState({index:4})}>NEXT</Button>
+                                    <Button className='move-on-btn' onClick={()=>this.setState({index:4})}>NEXT</Button>
                                 </Col>
                             </Row>
                         </div>
                     </Carousel.Item>
-                    <Carousel.Item style={{backgroundColor:'#FBF6F2',backgroundSize:'cover',height:'100vh'}}>
+                    <Carousel.Item className='quiz-background'>
                         <div style={{display:'flex',justifyContent:'center',alignItems:'center',position:'relative',top:'20vh',flexDirection:'column'}}>
                             <p style={{color:'#44524A',fontSize:'30px'}}>WHAT’S THE FIT ON THE BODY?</p>
                             <Row className='body-choice'>
@@ -159,20 +159,20 @@ export default class QuizPage extends React.Component {
                                 <Col><Button variant='pink'>Drapes over body</Button></Col>
                                 <Col><Button variant='pink'>Other</Button></Col>
                             </Row>
-                            <Row>
+                            <Row className='lura-tip'>
                                 <strong>Lura tip: </strong><p> if your design matches more than one category, choose all that work!</p>
                             </Row>
                             <Row style={{justifyContent:'center',alignItems:'center'}}>
                                 <Col>
-                                    <Button style={{backgroundColor:'#375247',color:'white',width:'10vw',border:'none',borderRadius:'5px',margin:'20px 0'}} onClick={()=>this.setState({index:3})}>BACK</Button>
+                                    <Button className='move-on-btn' style={{margin:'20px 0'}}onClick={()=>this.setState({index:3})}>BACK</Button>
                                 </Col>
                                 <Col>
-                                    <Button style={{backgroundColor:'#375247',color:'white',width:'10vw',border:'none',borderRadius:'5px',margin:'20px 0'}} onClick={()=>this.setState({index:5})}>NEXT</Button>
+                                    <Button style={{margin:'20px 0'}} className='move-on-btn' onClick={()=>this.setState({index:5})}>NEXT</Button>
                                 </Col>
                             </Row>
                         </div>
                     </Carousel.Item>
-                    <Carousel.Item style={{backgroundColor:'#FBF6F2',backgroundSize:'cover',height:'100vh'}}>
+                    <Carousel.Item className='quiz-background'>
                         <div style={{display:'flex',justifyContent:'center',alignItems:'center',position:'relative',top:'20vh',flexDirection:'column'}}>
                             <p style={{color:'#44524A',fontSize:'30px'}}>WHAT WEIGHT ARE YOU LOOKING FOR?</p>
                             <Row className='weight'>
@@ -183,15 +183,15 @@ export default class QuizPage extends React.Component {
                             </Row>
                             <Row style={{justifyContent:'center',alignItems:'center'}}>
                                 <Col>
-                                    <Button style={{backgroundColor:'#375247',color:'white',width:'10vw',border:'none',borderRadius:'5px',margin:'40px 0'}} onClick={()=>this.setState({index:4})}>BACK</Button>
+                                    <Button style={{margin:'40px 0'}} className='move-on-btn' onClick={()=>this.setState({index:4})}>BACK</Button>
                                 </Col>
                                 <Col>
-                                    <Button style={{backgroundColor:'#375247',color:'white',width:'10vw',border:'none',borderRadius:'5px',margin:'40px 0'}} onClick={()=>this.setState({index:6})}>NEXT</Button>
+                                    <Button style={{margin:'40px 0'}} className='move-on-btn' onClick={()=>this.setState({index:6})}>NEXT</Button>
                                 </Col>
                             </Row>
                         </div>
                     </Carousel.Item>
-                    <Carousel.Item style={{backgroundColor:'#FBF6F2',backgroundSize:'cover',height:'100vh'}}>
+                    <Carousel.Item className='quiz-background'>
                         <div style={{display:'flex',justifyContent:'center',alignItems:'center',position:'relative',top:'20vh',flexDirection:'column'}}>
                             <p style={{color:'#44524A',fontSize:'30px'}}>ANY PARTICULAR DETAILING?</p>
                             <Row className='detailing'>
@@ -199,29 +199,31 @@ export default class QuizPage extends React.Component {
                                 <Col><Button variant='pink'>Metallic, shiny</Button></Col>
                                 <Col><Button variant='pink'>Glitter, sequins</Button></Col>
                                 <Col><Button variant='pink'>Patterns</Button></Col>
-                                <Col><Button variant='pink'>Customizable patterns</Button></Col>
                             </Row>
                             <Row className='detailing'>
+                                <Col><Button variant='pink'>Customizable patterns</Button></Col>
                                 <Col><Button variant='pink'>Lace</Button></Col>
                                 <Col><Button variant='pink'>Mesh</Button></Col>
                                 <Col><Button variant='pink'>Embroidered</Button></Col>
+                            </Row>
+                            <Row className='detailing'>
                                 <Col><Button variant='pink'>Silk, satin</Button></Col>
                                 <Col><Button variant='pink'>None of the above</Button></Col>
                             </Row>
-                            <Row>
+                            <Row className='lura-tip'>
                                 <strong>Lura Tip: </strong><p> Choose based on the description that matches what you want, not the image!</p>
                             </Row>
                             <Row style={{justifyContent:'center',alignItems:'center'}}>
                                 <Col>
-                                    <Button style={{backgroundColor:'#375247',color:'white',width:'10vw',border:'none',borderRadius:'5px',margin:'40px 0'}} onClick={()=>this.setState({index:5})}>BACK</Button>
+                                    <Button style={{margin:'40px 0'}} className='move-on-btn' onClick={()=>this.setState({index:5})}>BACK</Button>
                                 </Col>
                                 <Col>
-                                    <Button style={{backgroundColor:'#375247',color:'white',width:'10vw',border:'none',borderRadius:'5px',margin:'40px 0'}} onClick={()=>this.setState({index:7})}>NEXT</Button>
+                                    <Button style={{margin:'40px 0'}} className='move-on-btn' onClick={()=>this.setState({index:7})}>NEXT</Button>
                                 </Col>
                             </Row>
                         </div>
                     </Carousel.Item>
-                    <Carousel.Item style={{backgroundColor:'#FBF6F2',backgroundSize:'cover',height:'100vh'}}>
+                    <Carousel.Item className='quiz-background'>
                         <div style={{display:'flex',justifyContent:'center',alignItems:'center',position:'relative',top:'20vh',flexDirection:'column'}}>
                             <p style={{color:'#44524A',fontSize:'30px'}}>SHEERNESS?</p>
                             <Row className='weight'>
@@ -232,20 +234,20 @@ export default class QuizPage extends React.Component {
                                 <Col><Button variant='pink'>Opaque</Button></Col>
                                 <Col><Button variant='pink'>No preference</Button></Col>
                             </Row>
-                            <Row>
+                            <Row className='lura-tip'>
                                 <strong>Lura Tip: </strong><p> Choose based on the description that matches what you want, not the image!</p>
                             </Row>
                             <Row style={{justifyContent:'center',alignItems:'center'}}>
                                 <Col>
-                                    <Button style={{backgroundColor:'#375247',color:'white',width:'10vw',border:'none',borderRadius:'5px',margin:'40px 0'}} onClick={()=>this.setState({index:6})}>BACK</Button>
+                                    <Button style={{margin:'40px 0'}} className='move-on-btn' onClick={()=>this.setState({index:6})}>BACK</Button>
                                 </Col>
                                 <Col>
-                                    <Button style={{backgroundColor:'#375247',color:'white',width:'10vw',border:'none',borderRadius:'5px',margin:'40px 0'}} onClick={()=>this.setState({index:8})}>NEXT</Button>
+                                    <Button style={{margin:'40px 0'}} className='move-on-btn' onClick={()=>this.setState({index:8})}>NEXT</Button>
                                 </Col>
                             </Row>
                         </div>
                     </Carousel.Item>
-                    <Carousel.Item style={{backgroundColor:'#FBF6F2',backgroundSize:'cover',height:'100vh'}}>
+                    <Carousel.Item className='quiz-background'>
                         <div style={{display:'flex',justifyContent:'center',alignItems:'center',position:'relative',top:'20vh',flexDirection:'column'}}>
                             <p style={{color:'#44524A',fontSize:'30px'}}>UPLOAD AN SKETCH OF YOUR DESIGN</p>
                             <Row>
@@ -270,21 +272,21 @@ export default class QuizPage extends React.Component {
                             </Row>
                             <Row style={{justifyContent:'center',alignItems:'center'}}>
                                 <Col>
-                                    <Button style={{backgroundColor:'#375247',color:'white',width:'10vw',border:'none',borderRadius:'5px',margin:'40px 0'}} onClick={()=>this.setState({index:7})}>BACK</Button>
+                                    <Button style={{margin:'40px 0'}} className='move-on-btn' onClick={()=>this.setState({index:7})}>BACK</Button>
                                 </Col>
                                 <Col>
-                                    <Button style={{backgroundColor:'#375247',color:'white',width:'10vw',border:'none',borderRadius:'5px',margin:'40px 0'}} onClick={()=>this.setState({index:9})}>NEXT</Button>
+                                    <Button style={{margin:'40px 0'}} className='move-on-btn' onClick={()=>this.setState({index:9})}>NEXT</Button>
                                 </Col>
                             </Row>
                         </div>
                     </Carousel.Item>
-                    <Carousel.Item style={{backgroundColor:'#FBF6F2',backgroundSize:'cover',height:'100vh'}}>
+                    <Carousel.Item className='quiz-background'>
                     <div style={{display:'flex',justifyContent:'center',alignItems:'center',position:'relative',top:'20vh',flexDirection:'column'}}>
                                 <p style={{color:'#44524A',fontSize:'30px'}}>THANK YOU!</p>
                                 <div style={{width:'50vw'}}>
                                     <p>Your results will be available within 24 hours through your Lura login, in your account page. You'll get an email when they are ready. </p>
                                 </div>
-                                <Button onClick={()=>{this.setState({redirect:true})}}style={{backgroundColor:'#375247',color:'white',width:'10vw',border:'none',borderRadius:'5px',margin:'40px 0'}}>My Account</Button>
+                                <Button onClick={()=>{this.setState({redirect:true})}}style={{margin:'40px 0'}} className='move-on-btn' style={{width:'30vw'}}>My Account</Button>
                         </div>
                     </Carousel.Item>
                 </Carousel>

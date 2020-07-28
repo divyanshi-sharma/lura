@@ -3,13 +3,13 @@ import CustomHeader from '../components/header'
 import CustomFooter from '../components/footer'
 import ShopSideMenu from '../components/shop-components/shopMenu'
 import ShopSectors from '../components/shop-components/shopSectors'
-import Breadcrumb from 'react-bootstrap/Breadcrumb'
+import { RightOutlined, LeftOutlined } from '@ant-design/icons'
 import Button from 'react-bootstrap/Button'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import { Switch, Redirect } from 'react-router-dom'
 import * as Constants from './constants'
-
+import '../components/shop-components/shop.css'
 const types = Constants.shopFabrics
 const sectors = Constants.shopSectors
 
@@ -20,8 +20,13 @@ export default class ShopPage extends Component {
             redirect: false,
             selected: [], 
             data: sectors,
-            filtered: sectors
+            filtered: sectors,
+            collapse: false,
+            width: window.innerWidth
         }
+    }
+    componentWillMount = () => {
+        this.setState({width: window.innerWidth})
     }
     handleItemClick = (e) => {
         var newSelected = [...this.state.selected]
@@ -60,16 +65,20 @@ export default class ShopPage extends Component {
         }
     }
     render(){
+        console.log(this.state.width)
         return( 
             <div>
                 {this.renderRedirect()}
                 <CustomHeader/>
                 <div className='shop-main-content' style={{position:'relative',top:'120px'}}>
                     <Row>
-                        <Col className='side-filter' md={3}>
+                        <Col className='side-filter' xs={this.state.collapse?1:9} md={3} style={this.state.collapse?{left:'-100%',transition:'0.5s'}:{}}>
                             <ShopSideMenu selected={this.state.selected} handleItemClick={this.handleItemClick}/>
                         </Col>
-                        <Col className='shop-main' md={9}>
+                        <div style={this.state.collapse?{transition:'0.5s'}:{}} className='shop-control-collapse-col'>
+                            <Button onClick={()=>{this.setState({collapse:!this.state.collapse})}} className='control-collapse'>{this.state.collapse?<RightOutlined />:<LeftOutlined />}</Button>
+                        </div>
+                        <Col className='shop-main' xs={7} md={9} style={(this.state.collapse)?{transition:'0.5s'}:this.state.width>800?{}:{display:'none'}}>
                             <div style={{display:'flex',justifyContent:'center',flexDirection:'column',alignItems:'center',margin:'30px'}}>
                                 <p>Need helping finding a fabric to suit your needs? Take our free fabric matching quiz!</p>
                                 <Button onClick={()=>{this.setState({redirect:true})}} className='btn-darkgreen'>START CONSULTATION</Button>

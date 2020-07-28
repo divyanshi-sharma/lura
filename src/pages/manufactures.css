@@ -48,7 +48,7 @@ ul {
     top: 5px;
     width: 5px;
     height: 10px;
-    border-color: var(--color-var);
+    border: solid var(--color-var);
     border-width: 0 3px 3px 0;
     -webkit-transform: rotate(45deg);
     -ms-transform: rotate(45deg);

@@ -1,3 +1,14 @@
+.quiz-background {
+    background-color: #FBF6F2;
+    background-size: cover;
+    min-height: 100vh;
+    overflow: auto;
+}
+
+.carousel-item > div > .row {
+    margin: 0;
+}
+
 .btn-pink,
 .btn-pink:active,
 .btn-pink:visited,
@@ -11,54 +22,27 @@
     border: none !important;   
     display: flex !important;
     align-items: center !important;
-    justify-content: center !important;
+    justify-content: center;
 }
 .btn-pink:hover {
     opacity: 0.65;
 }
-.fabric-choice > .col >button {
-    height:90px;
-    width: 250px;
-    margin:10px;
-    padding: 20px;
-    font-weight: 200;
-}
 
-
-.img-pink-box > button {
-    height:200px;
-    width: 160px;
-    flex-direction: column;
-    margin:10px;
-    font-weight: 200;
+.move-on-btn,
+.move-on-btn:focus {
+    background-color: #375247 !important;
+    color: white !important;
+    border: none !important;
+    border-radius: 5px !important;
+    box-shadow: none !important;
 }
-
-.img-pink-box  > button > img {
-    height: 140px;
-    width: 140px
-}
-.body-choice > .col > button {
-    height:100px;
-    width: 250px;
-    margin:10px;
-    padding: 20px;
-    font-weight: 200;
-}
-
-.weight > .col > button {
-    height:100px;
-    width: 250px;
-    margin:10px;
-    padding: 20px;
-    font-weight: 200;
-}
-
-.detailing > .col > button {
-    height:100px;
-    width: 200px;
-    margin:10px;
-    padding: 20px;
-    font-weight: 200;
+.move-on-btn:hover {
+    background-color: #375247 !important;
+    color: white !important;
+    border: none !important;
+    border-radius: 5px !important;
+    box-shadow: none !important;
+    opacity: 0.65;
 }
 
 #custom-file-upload,
@@ -117,4 +101,107 @@
 .carousel-control-prev, 
 .carousel-control-next {
     display: none !important
+}
+
+.lura-tip {
+    margin:15px !important
+}
+
+@media screen and (min-width: 801px) {
+    .move-on-btn {
+        width:10vw
+    }
+    .fabric-choice > .col >button {
+        height:90px;
+        width: 250px;
+        margin:10px;
+        padding: 20px;
+        font-weight: 200;
+    }
+    .img-pink-box > button {
+        height:200px;
+        width: 160px;
+        flex-direction: column;
+        margin:10px;
+        font-weight: 200;
+    }
+    .img-pink-box  > button > img {
+        height: 140px;
+        width: 140px
+    }
+    .body-choice > .col > button {
+        height:100px;
+        width: 250px;
+        margin:10px;
+        padding: 20px;
+        font-weight: 200;
+    }
+    
+    .weight > .col > button {
+        height:100px;
+        width: 250px;
+        margin:10px;
+        padding: 20px;
+        font-weight: 200;
+    }
+    
+    .detailing > .col > button {
+        height:100px;
+        width: 200px;
+        margin:10px;
+        padding: 20px;
+        font-weight: 200;
+    }
+    
+}
+
+@media screen and (max-width: 800px) {
+    .move-on-btn {
+        width:20vw
+    }
+    .fabric-choice > .col >button {
+        height:90px;
+        width: 150px;
+        margin:10px 0;
+        padding: 20px;
+        font-weight: 200;
+    }
+    .img-pink-box > button {
+        height:150px;
+        width: 80px;
+        flex-direction: column;
+        margin:5px 0;
+        font-weight: 200;
+        font-size: 15px;
+        justify-content: flex-start !important;
+        overflow-y: scroll;
+    }
+    .img-pink-box  > button > img {
+        height: 70px;
+        width: 70px
+    }
+    .body-choice > .col > button {
+        height:100px;
+        width: 150px;
+        margin:10px 0;
+        padding: 20px;
+        font-weight: 200;
+    }
+    
+    .weight > .col > button {
+        height:180px;
+        width: 150px;
+        margin:10px 0;
+        padding: 20px;
+        font-weight: 200;
+    }
+    
+    .detailing > .col > button {
+        height:70px;
+        width: 100px;
+        margin:10px 0;
+        padding: 20px;
+        font-weight: 200;
+    }
+    
 }

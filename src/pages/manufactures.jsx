@@ -58,7 +58,7 @@ export default class Manufacture extends Component {
                     <Col xs={3} md={1} style={this.state.collapse?{transition:'0.5s',left:'-10%'}:{}} className='control-collapse-col'>
                         <Button onClick={()=>{this.setState({collapse:!this.state.collapse})}} className='control-collapse'>{this.state.collapse?<RightOutlined />:<LeftOutlined />}</Button>
                     </Col>
-                    <Col xs={7} className='database-content-main' style={this.state.collapse?{transition:'0.5s',left:'-10%'}:{}}>
+                    <Col xs={7} className='database-content-main' style={this.state.collapse?{transition:'0.5s',left:'-10%'}:{display:'none'}}>
                         {this.state.manufacturers.length!== 0?this.state.manufacturers.map((manu, i)=>{
                             return(
                                 <ManuCard info={manu} index={i} saved={this.state.saved}/>

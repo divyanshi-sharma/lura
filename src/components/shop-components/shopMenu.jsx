@@ -29,13 +29,13 @@ export default class ShopSideMenu extends React.Component {
     render(){
     return(
         <div>
-        <h3 style={{padding:'40px 40px 20px 50px', fontSize:'30px'}}>Sort By</h3>
+        <h3 style={{padding:'40px 40px 20px 0px', fontSize:'30px', fontWeight:'200'}}>Sort By</h3>
         <Dropdown  onToggle={(isOpen)=>{this.setState({openType:isOpen})}}>
             <div style={{display:'flex',justifyContent:'space-between',alignItems:'center'}}>
                 <Dropdown.Toggle style={{padding:'20px 0'}}  className='btn-transparent'>Fabric Type</Dropdown.Toggle>
                 {this.state.openType?<DownOutlined/>:<RightOutlined/>}
             </div>
-            <Dropdown.Menu>
+            <Dropdown.Menu style={this.state.openType?{height:'fit-content',transition:'0.5s'}:{height:0,transition:'0.5s'}}>
                 {fabrics.map((list,i)=>{return(
                     <div key={i}>
                             <Dropdown style={{padding:'0 10px'}}>
@@ -58,7 +58,7 @@ export default class ShopSideMenu extends React.Component {
                 <Dropdown.Toggle style={{padding:'20px 0'}}  className='btn-transparent'>Color</Dropdown.Toggle>
                 {this.state.openColor?<DownOutlined/>:<RightOutlined/>}
             </div>
-            <Dropdown.Menu>
+            <Dropdown.Menu style={this.state.openColor?{height:'fit-content',transition:'0.5s'}:{height:0,transition:'0.5s'}}>
             {colors.map((option)=>{
                 return(
                     <Checkbox handleItemClick={this.props.handleItemClick} option={option}/>
@@ -72,7 +72,7 @@ export default class ShopSideMenu extends React.Component {
                 <Dropdown.Toggle style={{padding:'20px 0'}}  className='btn-transparent'>Print</Dropdown.Toggle>
                 {this.state.openPrint?<DownOutlined/>:<RightOutlined/>}
             </div>
-            <Dropdown.Menu>
+            <Dropdown.Menu style={this.state.openPrint?{height:'fit-content',transition:'0.5s'}:{height:0,transition:'0.5s'}}>
             {prints.map((option)=>{
                 return(
                     <Checkbox handleItemClick={this.props.handleItemClick} option={option}/>
@@ -86,7 +86,7 @@ export default class ShopSideMenu extends React.Component {
                 <Dropdown.Toggle style={{padding:'20px 0'}}  className='btn-transparent'>Location</Dropdown.Toggle>
                 {this.state.openLocation?<DownOutlined/>:<RightOutlined/>}
             </div>
-            <Dropdown.Menu>
+            <Dropdown.Menu style={this.state.openLocation?{height:'fit-content',transition:'0.5s'}:{height:0,transition:'0.5s'}}>
                 {locations.map((list,i)=>{return(
                     <div key={i}>
                             <Dropdown style={{padding:'0 10px'}}>
@@ -109,7 +109,7 @@ export default class ShopSideMenu extends React.Component {
                 <Dropdown.Toggle style={{padding:'20px 0'}}  className='btn-transparent'>Price</Dropdown.Toggle>
                 {this.state.openPri?<DownOutlined/>:<RightOutlined/>}
             </div>
-            <Dropdown.Menu>
+            <Dropdown.Menu style={this.state.openPri?{height:'fit-content',transition:'0.5s'}:{height:0,transition:'0.5s'}}>
             {prices.map((option)=>{
                 return(
                     <Checkbox handleItemClick={this.props.handleItemClick} option={option}/>
@@ -123,7 +123,7 @@ export default class ShopSideMenu extends React.Component {
                 <Dropdown.Toggle style={{padding:'20px 0'}}  className='btn-transparent'>Weight</Dropdown.Toggle>
                 {this.state.openWeight?<DownOutlined/>:<RightOutlined/>}
             </div>
-            <Dropdown.Menu>
+            <Dropdown.Menu style={this.state.openWeight?{height:'fit-content',transition:'0.5s'}:{height:0,transition:'0.5s'}}>
             {weights.map((option,i)=>{return(
                 <Checkbox handleItemClick={this.props.handleItemClick} option={option}/>
                 )
@@ -136,7 +136,7 @@ export default class ShopSideMenu extends React.Component {
                 <Dropdown.Toggle style={{padding:'20px 0'}}  className='btn-transparent'>Detailing</Dropdown.Toggle>
                 {this.state.openDetail?<DownOutlined/>:<RightOutlined/>}
             </div>
-            <Dropdown.Menu>
+            <Dropdown.Menu style={this.state.openDetail?{height:'fit-content',transition:'0.5s'}:{height:0,transition:'0.5s'}}>
             {detailings.map((option,i)=>{return(
                 <Checkbox handleItemClick={this.props.handleItemClick} option={option}/>
                 )
