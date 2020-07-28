@@ -5,6 +5,7 @@ import API from '../utils/API'
 import {PageView, initGA} from './Tracking';
 import { Event } from "./Tracking";
 import ReactGA from "react-ga";
+import './header.css'
 
 const config = {
     headers: {
@@ -68,8 +69,9 @@ export default class LoginPage extends React.Component {
     render(){
 
         return(
-                <Form style={{textAlign:'left', padding:'5%'}}>
-                    <Form.Group controlId="formBasicEmail">
+            <div>
+                <Form style={{textAlign:'left', padding:'5%',}}>
+                    <Form.Group>
                         <Form.Label>Email address</Form.Label>
                         <Form.Control type="email" placeholder="Enter email" ref={this.username}/>
                         <Form.Text className="text-muted">
@@ -79,11 +81,15 @@ export default class LoginPage extends React.Component {
 
                     <Form.Group>
                         <Form.Label>Password</Form.Label>
-                        <Form.Control type="password" placeholder="Password" ref={this.password}/>
+                        <Form.Control type="password" placeholder="Password" ref={this.password} style={{backgroundColor:'#F5EBE9',boxShadow:"3px 3px 8px 1px rgba(0,0,0,0.16)"}}/>
                     </Form.Group>
-                <Button type='submit' className='btn-darkgreen' onClick={this.handleClick}>submit</Button>
-                <Button href='/signup' style={{margin:'0 30px'}} variant='link'>Register</Button>
+                <div style={{display:'flex', justifyContent:'center',marginTop:'30px',flexDirection:'column',alignItems:'center'}}>
+                    <Button type='submit' className='btn-darkgreen' onClick={this.handleClick}>Login</Button>
+                    <div style={{color:'#958A8A', marginTop:'30px'}}>Don't have an account?</div>
+                    <Button href='/signup' style={{margin:'0 10px',textAlign:"center"}} className='btn-darkgreen'>Register</Button>
+                </div>
                 </Form>
+        </div>
         )
     }
 }

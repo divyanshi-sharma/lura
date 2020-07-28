@@ -53,3 +53,56 @@ export const manuInfo = [{
 }]
 
 //shop page constants
+export const shopFabrics = [
+    ['Recycled Cotton','Silk','Hemp'], 
+    ['Lyocell Fibre','Wool'], ['Recycled Polyester']
+]
+
+export const shopSectors = [
+    {
+        id:'1',
+        name:'Burgundy Leather',
+        price: 10,
+        tags:['leather']
+    }, {
+        id:'2',
+        name:'Peach Silk',
+        price:10,
+        tags:['silk']
+    }, {
+        id:'3',
+        name:'Mid-wash Denim',
+        price:10,
+        tags:['denim']
+    }, {
+        id:'4',
+        name:'Green Silk',
+        price:10,
+        tags:['silk']
+    },{
+        id:'5',
+        name:'Baby Pink Knit',
+        price:10,
+        tags:['knit']
+    }, {
+        id:'6',
+        name:'Ocean Blue Leather',
+        price:10,
+        tags:['leather']
+    }, {
+        id:'7',
+        name:'White Lace',
+        price:10,
+        tags:['lace']
+    }, {
+        id:'8',
+        name:'Caramel Silk',
+        price:10,
+        tags:['silk']
+    }, {
+        id:'9',
+        name:'Turtle Print',
+        price:10,
+        tags:['print']
+    }
+]

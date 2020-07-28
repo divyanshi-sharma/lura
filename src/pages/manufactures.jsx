@@ -2,12 +2,13 @@ import React, { Component } from 'react';
 import CustomHeader from '../components/header'
 import SideMenu  from '../components/manuMenu'
 import ManuCard from '../components/manuCard'
+import Button from 'react-bootstrap/Button'
 import lineImage from '../img/vickholius-nugroho-jt6QxZwSOCQ-unsplash.jpg'
-import { Layout } from 'antd';
+import { RightOutlined, LeftOutlined } from '@ant-design/icons'
 import API from '../utils/API'
+import Row from 'react-bootstrap/Row'
+import Col from 'react-bootstrap/Col'
 import './manufactures.css'
-
-const { Header, Sider, Content } = Layout;
 
 
 
@@ -16,7 +17,8 @@ export default class Manufacture extends Component {
         super()
         this.state={
             manufacturers: [],
-            saved: []
+            saved: [],
+            collapse: true
         }
     }
     async getManufacturerfromDB () {
@@ -36,26 +38,29 @@ export default class Manufacture extends Component {
     render(){
         return(
             <div>
-                <Layout>
-                    <Header><CustomHeader /></Header>
-                    <div style={{position:'relative', top:'120px', zIndex:1000}}>
-                        <div className="image-text" style={ImageText}>MANUFACTURER DATABASE</div>
-                    </div>
-                    <Layout style={{position:'relative', top:'210px', height:'fit-content', textAlign:'left', display:'flex', }}>
-                        <Sider width='30%' style={{border:'1px solid rgba(0,0,0,0.25)', boxShadow:'rgba(0, 0, 0, 0.25) 3px 0px 5px 0.5px', 
-                    backgroundColor:'white'}} breakpoint='lg' collapsedWidth="0">
+                <div>
+                    <CustomHeader />
+                </div>
+                <div className='database-title'>
+                    <div className="image-text" style={ImageText}>MANUFACTURER DATABASE</div>
+                </div>
+                <Row style={{textAlign:'left',margin:'0',backgroundColor:'#FEF9F6'}} className='database-content'>
+                    <Col md={4} xs={9} style={{border:'1px solid rgba(0,0,0,0.25)', boxShadow:'rgba(0, 0, 0, 0.25) 3px 0px 5px 0.5px', 
+                backgroundColor:'white',minHeight:'100vh',display:this.state.collapse?'none':'block'}} className={`side-menu ${this.state.collapse?'collapse':'show'}`}>
                         <SideMenu />
-                        </Sider>
-                        <Content style={{display:'flex', flexDirection:'column', justifyContent:'center', width:'100%', alignItems:'center',
-                    backgroundColor:'#FEF9F6', height:'fit-content'}}>
-                            {this.state.manufacturers.length !== 0 ? this.state.manufacturers.map((manu, i)=>{
-                                return(
-                                    <ManuCard info={manu} index={i} saved={this.state.saved}/>
-                                )
-                            }):<h3>There is no manufacturer in the database...</h3>}
-                        </Content>
-                    </Layout>
-                </Layout>
+                    </Col>
+                    <Col xs={3} md={1} style={{backgroundColor:'#FEF9F6'}}>
+                        <Button onClick={()=>{this.setState({collapse:!this.state.collapse})}} className='control-collapse'>{this.state.collapse?<RightOutlined />:<LeftOutlined />}</Button>
+                    </Col>
+                    <Col md={this.state.collapse?11:7} style={{flexDirection:'column', width:'100%', alignItems:'center',
+                backgroundColor:'#FEF9F6', minHeight:'100vh',display:this.state.collapse?'flex':'none'}}>
+                        {this.state.manufacturers.length !== 0 ? this.state.manufacturers.map((manu, i)=>{
+                            return(
+                                <ManuCard info={manu} index={i} saved={this.state.saved}/>
+                            )
+                        }):<h3>There is no manufacturer in the database...</h3>}
+                    </Col>
+                </Row>
             </div>
         )
     }

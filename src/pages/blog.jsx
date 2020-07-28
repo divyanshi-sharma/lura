@@ -4,7 +4,7 @@ import Footer from '../components/footer'
 import Card from 'react-bootstrap/Card'
 import Button from 'react-bootstrap/Button'
 import API from '../utils/API'
-import {Spin} from 'antd'
+import Spinner from 'react-bootstrap/Spinner'
 import {PageView, initGA} from '../components/Tracking';
 import { Event } from "../components/Tracking";
 
@@ -42,7 +42,7 @@ export default class BlogPage extends Component{
                     </div>
                     <div className="articles">
                     <div style={{display:'flex', flexDirection:'column', 
-                justifyContent:'center', alignItems:'center'}}>
+                justifyContent:'center', alignItems:'center',flexWrap:'wrap'}}>
                     {this.state.posts.map((article, i) => {
                         return(
                             <Card className='info-card' key={i} 
@@ -59,7 +59,9 @@ export default class BlogPage extends Component{
                     })}
                 </div>
                     </div>
-                </div>:<div style={{display:'flex', justifyContent:'center', padding:'40px',color:'#365247 '}}><Spin size="large"/></div>}
+                </div>:<div style={{display:'flex', justifyContent:'center', padding:'40px',color:'#365247',minHeight:'100vh'}}>
+                    <Spinner animation="border" style={{color:'#365247'}}/>
+                    </div>}
                     <Footer/>
                 </div>
             )

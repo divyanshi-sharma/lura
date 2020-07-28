@@ -26,3 +26,11 @@ a > .shop:hover {
 .header-navs > .nav-item > .nav-link {
     width: fit-content !important;
 }
+.header-navs > .modal-content {
+    background-color: #FBF6F2;
+}
+.form-group > input {
+    background-color: #F5EBE9;
+    box-shadow: 3px 3px 8px 1px rgba(0,0,0,0.16);
+    border:none
+}

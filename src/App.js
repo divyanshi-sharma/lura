@@ -1,6 +1,7 @@
 import React from 'react';
 import './App.css';
 import MainPage from './pages/main';
+//import ShopItemPage from './pages/shopItem';
 import ShopPage from './pages/shop';
 import BlogPage from './pages/blog';
 import ManuPage from './pages/manufactures';
@@ -12,6 +13,7 @@ import CreateManuPage from './admin/createManu'
 import EditManuPage from './admin/editManu'
 import AdminPage from './admin/adminPage'
 import QuizPage from './pages/quiz/quizPage'
+import Example from './pages/example'
 import { BrowserRouter as Router, Route, Switch, withRouter } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import ReactGA from 'react-ga';
@@ -32,7 +34,7 @@ function App() {
     <div className="App">
       <Switch>
         <Route exact path='/' component={MainPage}/>
-        <Route path='/shop' component={ShopPage} />
+        <Route path='/shop' component={ShopPage}/>
         <Route path='/blog' component={BlogPage} />
         <Route exact path='/blogContent/:blogId' component={PostPage}/>
         <Route path='/manufactures' component={ManuPage}/>
@@ -43,6 +45,7 @@ function App() {
         <Route path='/admin/edit/:ManuId' component={EditManuPage}/>
         <Route path='/admin' component={AdminPage}/>
         <Route path='/fabric-finder' component={QuizPage}/>
+        <Route path='/email-verification' component={Example}/>
       </Switch>
     </div>
     </Router>
@@ -51,3 +54,4 @@ function App() {
 
 export default withRouter(App);
 
+// <Route path='/shopItem/:itemId' component={ShopItemPage} />

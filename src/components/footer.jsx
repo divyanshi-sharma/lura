@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import { Icon} from 'antd' 
-import { InstagramOutlined } from '@ant-design/icons';
+import { FacebookOutlined, InstagramOutlined, TwitterOutlined } from '@ant-design/icons';
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import './footer.css'
@@ -14,7 +13,7 @@ export default class CustomFooter extends Component {
     render(){
         console.log(this.props.footer)
         if(this.props.footer){
-            return(
+            return (
                 <div className='footer-container'>
                     <Row className="line-2">
                     <Col xs={7}>
@@ -23,14 +22,14 @@ export default class CustomFooter extends Component {
                     <Col xs={5} className="icons" 
                     style={{display:'flex', color: 'white', fontSize: '20px'}}>
                         <InstagramOutlined />
-                        <Icon type="twitter" />
-                        <Icon type="facebook" />
+                        <TwitterOutlined />
+                        <FacebookOutlined />
                     </Col>
                 </Row>
                 </div>
-            )
+            );
         } else {
-        return(
+        return (
             <div className="footer-container">
                 <Row className="line-1">
                     <Col className="subscribe" xs={12} lg={7}>
@@ -60,11 +59,11 @@ export default class CustomFooter extends Component {
                     <Col xs={5} className="icons" 
                     style={{display:'flex', color: 'white', fontSize: '20px'}}>
                         <InstagramOutlined />
-                        <Icon type="twitter" />
-                        <Icon type="facebook" />
+                        <TwitterOutlined />
+                        <FacebookOutlined />
                     </Col>
                 </Row>
             </div>
-        )}
+        );}
     }
 }

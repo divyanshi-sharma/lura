@@ -5,6 +5,7 @@ import Carousel from 'react-bootstrap/Carousel'
 import Button from 'react-bootstrap/Button'
 import Col from 'react-bootstrap/Col'
 import Row from 'react-bootstrap/Row'
+import Modal from 'react-bootstrap/Modal'
 import background from '../../img/NAMIHOFFMAN_112419FABRIC-15.png'
 import stiff from '../../img/stiff.png'
 import stretchy from '../../img/stretchy2.png'
@@ -12,18 +13,31 @@ import silky from '../../img/silky.png'
 import comfy from '../../img/comfy.png'
 import airy from '../../img/airy.png'
 import './quiz.css'
+import { Switch, Redirect } from 'react-router-dom'
 
 export default class QuizPage extends React.Component { 
     constructor(){
         super()
         this.state={
-            index:5
+            index:0,
+            redirect:false,
+            show:false
+        }
+    }
+    renderRedirect = () =>{
+        if(this.state.redirect){
+            return(
+                <Switch>
+                    <Redirect from='/fabric-finder' to='/account'/>
+                </Switch>
+            )
         }
     }
     render(){
         return(
             <div>
                 <CustomHeader/>
+                {this.renderRedirect()}
                 <Carousel indicators={false} activeIndex={this.state.index}>
                     <Carousel.Item style={{backgroundImage:`url(${background})`,backgroundSize:'cover',height:'105vh',width:'105vw'}}>
                         <div style={{position:'absolute',right:'10vw', bottom:'10vh', width:'320px'}}>
@@ -44,22 +58,22 @@ export default class QuizPage extends React.Component {
                         <div style={{display:'flex',justifyContent:'center',alignItems:'center',position:'relative',top:'20vh',flexDirection:'column'}}>
                             <p style={{color:'#44524A',fontSize:'30px'}}>WHAT ARE YOU DESIGNING WITH THIS FABRIC?</p>
                             <Row className='fabric-choice'>
-                                <Col><Button className='pink-box'>Swimwear</Button></Col>
-                                <Col><Button className='pink-box'>Denim jackets, Pants, Tops</Button></Col>
-                                <Col><Button className='pink-box'>Summer dresses, Tops, Skirts</Button></Col>
-                                <Col><Button className='pink-box'>Trousers, Slacks, Bottoms</Button></Col>
+                                <Col><Button variant='pink'>Swimwear</Button></Col>
+                                <Col><Button variant='pink'>Denim jackets, Pants, Tops</Button></Col>
+                                <Col><Button variant='pink'>Summer dresses, Tops, Skirts</Button></Col>
+                                <Col><Button variant='pink'>Trousers, Slacks, Bottoms</Button></Col>
                             </Row>
                             <Row className='fabric-choice'>
-                                <Col><Button className='pink-box'>Leather/Suede</Button></Col>
-                                <Col><Button className='pink-box'>Knitwear</Button></Col>
-                                <Col><Button className='pink-box'>{'Shirts & Blouses'}</Button></Col>
-                                <Col><Button className='pink-box'>Activewear</Button></Col>
+                                <Col><Button variant='pink'>Leather/Suede</Button></Col>
+                                <Col><Button variant='pink'>Knitwear</Button></Col>
+                                <Col><Button variant='pink'>{'Shirts & Blouses'}</Button></Col>
+                                <Col><Button variant='pink'>Activewear</Button></Col>
                             </Row>
                             <Row className='fabric-choice'>
-                                <Col><Button className='pink-box'>{'Blazers & Coats'}</Button></Col>
-                                <Col><Button className='pink-box'>Hoodies</Button></Col>
-                                <Col><Button className='pink-box'>{'Smart casual & Formal dresswear'}</Button></Col>
-                                <Col><Button className='pink-box'>Other</Button></Col>
+                                <Col><Button variant='pink'>{'Blazers & Coats'}</Button></Col>
+                                <Col><Button variant='pink'>Hoodies</Button></Col>
+                                <Col><Button variant='pink'>{'Smart casual & Formal dresswear'}</Button></Col>
+                                <Col><Button variant='pink'>Other</Button></Col>
                             </Row>
                             <Row>
                                 <strong>Lura tip: </strong><p> if your design matches more than one category, choose all that work!</p>
@@ -79,19 +93,19 @@ export default class QuizPage extends React.Component {
                             <p style={{color:'#44524A',fontSize:'30px'}}>WHAT KIND OF FEEL ARE YOU LOOKING FOR?</p>
                             <Row>
                                 <Col className='img-pink-box'>
-                                    <Button>
+                                    <Button variant='pink'>
                                         <img src={silky}/>
                                         <p>Silky</p>
                                     </Button>
                                 </Col>
                                 <Col className='img-pink-box'>
-                                    <Button>
+                                    <Button variant='pink'>
                                         <img src={stiff}/>
                                         <p>Stiff, holds form</p>
                                     </Button>
                                 </Col>
                                 <Col className='img-pink-box'>
-                                    <Button>
+                                    <Button variant='pink'>
                                         <img src={airy}/>
                                         <p>Airy, Easy Wearable</p>
                                     </Button>
@@ -100,19 +114,19 @@ export default class QuizPage extends React.Component {
 
                             <Row>
                                 <Col className='img-pink-box'>
-                                    <Button>
+                                    <Button variant='pink'>
                                         <img src={stretchy}/>
                                         <p>Stretchy</p>
                                     </Button>
                                 </Col>
                                 <Col className='img-pink-box'>
-                                    <Button>
+                                    <Button variant='pink'>
                                         <img src={comfy}/>
                                         <p>Comfy, Cozy, Soft, Plush</p>
                                     </Button>
                                 </Col>
                                 <Col className='img-pink-box'>
-                                    <Button >
+                                    <Button variant='pink'>
                                         <p>Other</p>
                                     </Button>
                                 </Col>
@@ -134,16 +148,16 @@ export default class QuizPage extends React.Component {
                         <div style={{display:'flex',justifyContent:'center',alignItems:'center',position:'relative',top:'20vh',flexDirection:'column'}}>
                             <p style={{color:'#44524A',fontSize:'30px'}}>WHAT’S THE FIT ON THE BODY?</p>
                             <Row className='body-choice'>
-                                <Col><Button className='pink-box'>Body fit: stretches to hug body</Button></Col>
-                                <Col><Button className='pink-box'>Loose, comfy, easy fit</Button></Col>
-                                <Col><Button className='pink-box'>Fabric holds its fit but is comfy on body</Button></Col>
-                                <Col><Button className='pink-box'>Fits body at some points, loose at others</Button></Col>
+                                <Col><Button variant='pink'>Body fit: stretches to hug body</Button></Col>
+                                <Col><Button variant='pink'>Loose, comfy, easy fit</Button></Col>
+                                <Col><Button variant='pink'>Fabric holds its fit but is comfy on body</Button></Col>
+                                <Col><Button variant='pink'>Fits body at some points, loose at others</Button></Col>
                             </Row>
                             <Row className='body-choice'>
-                                <Col><Button className='pink-box'>Oversized, baggy</Button></Col>
-                                <Col><Button className='pink-box'>Structured, sharp</Button></Col>
-                                <Col><Button className='pink-box'>Drapes over body</Button></Col>
-                                <Col><Button className='pink-box'>Other</Button></Col>
+                                <Col><Button variant='pink'>Oversized, baggy</Button></Col>
+                                <Col><Button variant='pink'>Structured, sharp</Button></Col>
+                                <Col><Button variant='pink'>Drapes over body</Button></Col>
+                                <Col><Button variant='pink'>Other</Button></Col>
                             </Row>
                             <Row>
                                 <strong>Lura tip: </strong><p> if your design matches more than one category, choose all that work!</p>
@@ -162,10 +176,10 @@ export default class QuizPage extends React.Component {
                         <div style={{display:'flex',justifyContent:'center',alignItems:'center',position:'relative',top:'20vh',flexDirection:'column'}}>
                             <p style={{color:'#44524A',fontSize:'30px'}}>WHAT WEIGHT ARE YOU LOOKING FOR?</p>
                             <Row className='weight'>
-                                <Col><Button>Lightweight, barely there feel (thin chiffons, loose airy summer dresses)</Button></Col>
-                                <Col><Button>Medium, normal weight (basic cotton shirts, trousers)</Button></Col>
-                                <Col><Button>Heavy weight (thick hoodies, thick jeans, coats)</Button></Col>
-                                <Col><Button>Flexible on weight</Button></Col>
+                                <Col><Button variant='pink'>Lightweight, barely there feel (thin chiffons, loose airy summer dresses)</Button></Col>
+                                <Col><Button variant='pink'>Medium, normal weight (basic cotton shirts, trousers)</Button></Col>
+                                <Col><Button variant='pink'>Heavy weight (thick hoodies, thick jeans, coats)</Button></Col>
+                                <Col><Button variant='pink'>Flexible on weight</Button></Col>
                             </Row>
                             <Row style={{justifyContent:'center',alignItems:'center'}}>
                                 <Col>
@@ -175,6 +189,102 @@ export default class QuizPage extends React.Component {
                                     <Button style={{backgroundColor:'#375247',color:'white',width:'10vw',border:'none',borderRadius:'5px',margin:'40px 0'}} onClick={()=>this.setState({index:6})}>NEXT</Button>
                                 </Col>
                             </Row>
+                        </div>
+                    </Carousel.Item>
+                    <Carousel.Item style={{backgroundColor:'#FBF6F2',backgroundSize:'cover',height:'100vh'}}>
+                        <div style={{display:'flex',justifyContent:'center',alignItems:'center',position:'relative',top:'20vh',flexDirection:'column'}}>
+                            <p style={{color:'#44524A',fontSize:'30px'}}>ANY PARTICULAR DETAILING?</p>
+                            <Row className='detailing'>
+                                <Col><Button variant='pink'>Lace</Button></Col>
+                                <Col><Button variant='pink'>Metallic, shiny</Button></Col>
+                                <Col><Button variant='pink'>Glitter, sequins</Button></Col>
+                                <Col><Button variant='pink'>Patterns</Button></Col>
+                                <Col><Button variant='pink'>Customizable patterns</Button></Col>
+                            </Row>
+                            <Row className='detailing'>
+                                <Col><Button variant='pink'>Lace</Button></Col>
+                                <Col><Button variant='pink'>Mesh</Button></Col>
+                                <Col><Button variant='pink'>Embroidered</Button></Col>
+                                <Col><Button variant='pink'>Silk, satin</Button></Col>
+                                <Col><Button variant='pink'>None of the above</Button></Col>
+                            </Row>
+                            <Row>
+                                <strong>Lura Tip: </strong><p> Choose based on the description that matches what you want, not the image!</p>
+                            </Row>
+                            <Row style={{justifyContent:'center',alignItems:'center'}}>
+                                <Col>
+                                    <Button style={{backgroundColor:'#375247',color:'white',width:'10vw',border:'none',borderRadius:'5px',margin:'40px 0'}} onClick={()=>this.setState({index:5})}>BACK</Button>
+                                </Col>
+                                <Col>
+                                    <Button style={{backgroundColor:'#375247',color:'white',width:'10vw',border:'none',borderRadius:'5px',margin:'40px 0'}} onClick={()=>this.setState({index:7})}>NEXT</Button>
+                                </Col>
+                            </Row>
+                        </div>
+                    </Carousel.Item>
+                    <Carousel.Item style={{backgroundColor:'#FBF6F2',backgroundSize:'cover',height:'100vh'}}>
+                        <div style={{display:'flex',justifyContent:'center',alignItems:'center',position:'relative',top:'20vh',flexDirection:'column'}}>
+                            <p style={{color:'#44524A',fontSize:'30px'}}>SHEERNESS?</p>
+                            <Row className='weight'>
+                                <Col><Button variant='pink'>See through, sheer </Button></Col>
+                                <Col><Button variant='pink'>Partially sheer </Button></Col>
+                            </Row>
+                            <Row className='weight'>
+                                <Col><Button variant='pink'>Opaque</Button></Col>
+                                <Col><Button variant='pink'>No preference</Button></Col>
+                            </Row>
+                            <Row>
+                                <strong>Lura Tip: </strong><p> Choose based on the description that matches what you want, not the image!</p>
+                            </Row>
+                            <Row style={{justifyContent:'center',alignItems:'center'}}>
+                                <Col>
+                                    <Button style={{backgroundColor:'#375247',color:'white',width:'10vw',border:'none',borderRadius:'5px',margin:'40px 0'}} onClick={()=>this.setState({index:6})}>BACK</Button>
+                                </Col>
+                                <Col>
+                                    <Button style={{backgroundColor:'#375247',color:'white',width:'10vw',border:'none',borderRadius:'5px',margin:'40px 0'}} onClick={()=>this.setState({index:8})}>NEXT</Button>
+                                </Col>
+                            </Row>
+                        </div>
+                    </Carousel.Item>
+                    <Carousel.Item style={{backgroundColor:'#FBF6F2',backgroundSize:'cover',height:'100vh'}}>
+                        <div style={{display:'flex',justifyContent:'center',alignItems:'center',position:'relative',top:'20vh',flexDirection:'column'}}>
+                            <p style={{color:'#44524A',fontSize:'30px'}}>UPLOAD AN SKETCH OF YOUR DESIGN</p>
+                            <Row>
+                                <Form.File id='custom-file-upload' label='Choose file' custom></Form.File>
+                            </Row>
+                            <Button onClick={()=>{this.setState({show:true})}} className='upload-button'>Upload</Button>
+                            <Modal show={this.state.show} onHide={()=>{this.setState({show:false})}} centered style={{border:'none', borderRadius:'25px'}} className='upload-modal'>
+                                <Modal.Body style={{display:'flex',justifyContent:'center',padding:'40px',flexDirection:'column',alignItems:'center'}}>
+                                    <div>
+                                        <p style={{fontSize:'40px'}}>SUCCESS!</p>
+                                    </div>
+                                    <div>
+                                        <p>Upload confirmed.</p>
+                                    </div>
+                                    <div className='return-button'>
+                                        <Button onClick={()=>{this.setState({show: false})}}>Return</Button>
+                                    </div>
+                                </Modal.Body>
+                            </Modal>
+                            <Row style={{margin:'80px'}}>
+                                <strong>Lura Tip: </strong><p style={{width:'60vw'}}>  Uploading a design helps us understand your needs better, however, this is optional! Upload a .jpg, .png, or .jpeg. If you don’t want to upload anything, hit next.</p>
+                            </Row>
+                            <Row style={{justifyContent:'center',alignItems:'center'}}>
+                                <Col>
+                                    <Button style={{backgroundColor:'#375247',color:'white',width:'10vw',border:'none',borderRadius:'5px',margin:'40px 0'}} onClick={()=>this.setState({index:7})}>BACK</Button>
+                                </Col>
+                                <Col>
+                                    <Button style={{backgroundColor:'#375247',color:'white',width:'10vw',border:'none',borderRadius:'5px',margin:'40px 0'}} onClick={()=>this.setState({index:9})}>NEXT</Button>
+                                </Col>
+                            </Row>
+                        </div>
+                    </Carousel.Item>
+                    <Carousel.Item style={{backgroundColor:'#FBF6F2',backgroundSize:'cover',height:'100vh'}}>
+                    <div style={{display:'flex',justifyContent:'center',alignItems:'center',position:'relative',top:'20vh',flexDirection:'column'}}>
+                                <p style={{color:'#44524A',fontSize:'30px'}}>THANK YOU!</p>
+                                <div style={{width:'50vw'}}>
+                                    <p>Your results will be available within 24 hours through your Lura login, in your account page. You'll get an email when they are ready. </p>
+                                </div>
+                                <Button onClick={()=>{this.setState({redirect:true})}}style={{backgroundColor:'#375247',color:'white',width:'10vw',border:'none',borderRadius:'5px',margin:'40px 0'}}>My Account</Button>
                         </div>
                     </Carousel.Item>
                 </Carousel>

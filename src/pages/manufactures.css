@@ -1,16 +1,7 @@
 ul {
     list-style-type: none;
 }
-.ant-menu-item {
-    padding-left: 0 !important;
-    padding: 5px
-}
-.ant-menu-item-group-list {
-    padding: 0 10px;
-}
-.ant-menu-submenu-title:hover {
-    color:grey
-}
+
 /*check box*/
 .checkbox-label {
     margin-right: 10px;
@@ -40,15 +31,23 @@ ul {
     -ms-transition: all 0.3s ease-out;
     -o-transition: all 0.3s ease-out;
 }
-.checkbox-label input:checked ~ .checkbox-custom {
+.checkbox-label input:checked ~ .checkbox-custom{
     background-color: grey;
 }
+.checkbox-label input:active ~ .checkbox-custom{
+    background-color: grey;
+}
+
+
 .checkbox-custom:after {
     content: "";
     position: absolute;
     display: none;
 }
 .checkbox-label input:checked ~ .checkbox-custom:after{
+    display: block;
+}
+.checkbox-label input:active ~ .checkbox-custom:after{
     display: block;
 }
 .checkbox-label .checkbox-custom:after{
@@ -62,14 +61,32 @@ ul {
     -ms-transform: rotate(45deg);
     transform: rotate(45deg);
 }
-@media screen and (min-width: 861px) {
+@media screen and (min-width: 801px) {
     .image-text {
         font-size: 65px;
     }
+    .database-title {
+        position: relative;
+        top:120px;
+        z-index: 1000;
+    }
+    .database-content {
+        position: relative;
+        top:210px;
+    }
 }
 
-@media screen and (max-width: 860px) {
+@media screen and (max-width: 800px) {
     .image-text {
         font-size: 30px;
+    }
+    .database-title {
+        position: relative;
+        top:55px;
+        z-index: 1000;
+    }
+    .database-content {
+        position: relative;
+        top:145px;
     }
 }

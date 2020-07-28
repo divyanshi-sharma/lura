@@ -1,91 +1,93 @@
 import React, { Component } from 'react';
 import CustomHeader from '../components/header'
 import CustomFooter from '../components/footer'
-import { Breadcrumb, Icon, Rate, Input } from 'antd';
-import img_1 from '../img/NAMIHOFFMAN_112419FABRIC-19.png'
-import img_main from '../img/main_show_pic.png'
-import ControlledCarousel from '../components/shop_carousel'
+import ShopSideMenu from '../components/shop-components/shopMenu'
+import ShopSectors from '../components/shop-components/shopSectors'
+import Breadcrumb from 'react-bootstrap/Breadcrumb'
+import Button from 'react-bootstrap/Button'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
+import { Switch, Redirect } from 'react-router-dom'
+import * as Constants from './constants'
 
-// const pics = [
-//     '../img/NAMIHOFFMAN_112419FABRIC-19.png', '../img/main_show_pic.png'
-// ]
-
+const types = Constants.shopFabrics
+const sectors = Constants.shopSectors
 
 export default class ShopPage extends Component {
-
+    constructor(){
+        super()
+        this.state = {
+            redirect: false,
+            selected: [], 
+            data: sectors,
+            filtered: sectors
+        }
+    }
+    handleItemClick = (e) => {
+        var newSelected = [...this.state.selected]
+        if(this.state.selected.includes(e.target.id.toLowerCase())){
+            newSelected.pop()
+            this.setState({filtered:sectors})
+        }
+        else{newSelected.push(e.target.id.toLowerCase())}
+        window.setTimeout(function(){
+            this.setState({selected:newSelected})
+            this.listProducts()
+        }.bind(this), 0)
+    }
+    listProducts = () => {
+        if(this.state.selected.length !== 0){
+            console.log(this.state.selected, 'lowercase')
+            var filtered = [...this.state.filtered]
+            this.state.selected.forEach(tag=>{
+                filtered=filtered.filter(item=>item.tags.includes(tag))
+            })
+            //filtered = filtered.filter(item => item.tags.includes(this.state.selected[0]))
+            console.log('filtered', filtered)
+            this.setState({filtered:filtered})
+        } else {
+            this.setState({filtered:sectors})
+        }
+    }
+    renderRedirect = () => {
+        if(this.state.redirect){
+            return(
+                <Switch>
+                    <Redirect from='/shop' to='/fabric-finder'/>
+                </Switch>
+            )
+        }
+    }
     render(){
-        return(
+        return( 
             <div>
-                <div>
+                {this.renderRedirect()}
                 <CustomHeader/>
-                </div>
-                <div className="main-container"style={{position:'relative', top:'200px'}}>
-                    <div className="bread" style={{borderTop:'rgba(98, 97, 97, 0.3) solid 1px', margin: '0 40px', 
-                    textAlign:'left', fontSize:'25px', borderBottom:'#626161 solid 1px'}}>
-                        <Breadcrumb separator=" / " style={{padding:'20px', color:'#626161', opacity:'0.86'}}>
-                            <Breadcrumb.Item>Shop</Breadcrumb.Item>
-                            <Breadcrumb.Item>Athletic Fabrics</Breadcrumb.Item>
-                            <Breadcrumb.Item>Bamboo</Breadcrumb.Item>
-                        </Breadcrumb>
-                    </div>
-                    <Row className="shop-content" style={{borderColor:"black", height:'750px', margin:'20px 50px', display:'flex'}}>
-                        <Col md={8} className='controlled-carousel' style={{}}>
-                            <ControlledCarousel />
+                <div className='shop-main-content' style={{position:'relative',top:'120px'}}>
+                    <Row>
+                        <Col className='side-filter' md={3}>
+                            <ShopSideMenu selected={this.state.selected} handleItemClick={this.handleItemClick}/>
                         </Col>
-                        <Col md={4} className="details" style={{padding:'20px 0',
-                        display:'flex', flexDirection:'column'}}>
-                            <div className="title" style={{display:"flex", flexDirection:'column', 
-                            paddingBottom:'20px',borderBottom:'#707070 solid 1px'}}>
-                                <div className="line1" style={{display:"flex", justifyContent:'space-between',
-                                flexDirection:'row', alignItems:'center', padding:'10px 0'}}>
-                                    <div className='name' style={{fontSize:'40px', fontWeight:'bold',
-                                     color:'#626161', padding:'10px 0'}}>Fabric Name</div>
-                                    <div className="price" style={{fontSize:'25px', color:'#707070'}}>$40/yd.</div>
-                                </div>
-                                <div className="line2" style={{display:"flex", justifyContent:'space-between',flexDirection:'row'}}>
-                                    <div className="stars" style={{color:'#00000088', fontSize:'25px'}}>
-                                        <Icon type="star" theme='filled' style={{padding:'5px'}}/>
-                                        <Icon type="star" theme='filled' style={{padding:'5px'}}/>
-                                        <Icon type="star" theme='filled' style={{padding:'5px'}}/>
-                                        <Icon type="star" theme='filled' style={{padding:'5px'}}/>
-                                        <Icon type="star" theme='filled' style={{padding:'5px'}}/>
-                                    </div>
-                                    <div className="review" style={{fontSize:'19px', opacity:'0.65'}}>5.0 stars | see reviews</div>
-                                </div>
+                        <Col className='shop-main' md={9}>
+                            <div style={{display:'flex',justifyContent:'center',flexDirection:'column',alignItems:'center',margin:'20px'}}>
+                                <p>Need helping finding a fabric to suit your needs? Take our free fabric matching quiz!</p>
+                                <Button onClick={()=>{this.setState({redirect:true})}} className='btn-darkgreen'>START CONSULTATION</Button>
                             </div>
-                            <div className="colors" style={{paddingBottom:'20px',borderBottom:'#707070 solid 1px'}}>
-                                <div className="color" style={{textAlign:'left', color:'#707070', fontSize:'22px', paddingTop:'10px'}}>Colors</div>
-                                <div className="display-color" style={{display:'flex', flexDirection:'row', padding:'10px'}}>
-                                    <div className="cirlce" style={{height:'40px', width:'40px', borderRadius:'50%', backgroundColor:'crimson', margin:'0 10px'}}></div>
-                                    <div className="cirlce" style={{height:'40px', width:'40px', borderRadius:'50%', backgroundColor:'aquamarine', margin:'0 10px'}}></div>
-                                    <div className="cirlce" style={{height:'40px', width:'40px', borderRadius:'50%', backgroundColor:'bisque', margin:'0 10px'}}></div>
-                                </div>
-                            </div>
-                            <div className="info" style={{textAlign:'left', color:'#707070', paddingBottom:'20px'}}>
-                                <div style={{color:'#707070', fontWeight:'bold', fontSize:'22px'}}>Fabric Information</div>
-                                <ul>Thread count</ul>
-                                <ul>Stretch</ul>
-                                <ul>Commonly used for:</ul>
-                                <ul>Other Things</ul>
-                                <ul>Designers care about</ul>
-                            </div>
-                            <div className="size">
-                                <div style={{fontSize:'22px', color:'#707070', textAlign:'left'}}><i>Select a fabric length</i></div>
-                                <div className="size-input" style={{display:'flex', justifyContent:'flex-start', alignItems:'center'}}>
-                                    <Input style={{backgroundColor:'#EDEDEDBA', borderStyle:'none',height:'55px', width:'80px', margin:'10px 10px'}}/> ft.
-                                    <Input style={{backgroundColor:'#EDEDEDBA', borderStyle:'none',height:'55px', width:'80px', margin:'10px 10px'}}/> in.
-                                </div>
+                            <Breadcrumb>
+                                <Breadcrumb.Item href='/shop'>Shop</Breadcrumb.Item>
+                                <Breadcrumb.Item href='/shop'>Fabrics</Breadcrumb.Item>
+                            </Breadcrumb>
+                            <h3>Fabric</h3>
+                            <div className='shop-sectors' style={{margin:'2vw'}}>
+                                <ShopSectors data={this.state.filtered}/>
                             </div>
                         </Col>
                     </Row>
-                    <div className="creations" style={{height:'500px'}}>
-                    </div>
+                </div>
+                <div style={{position:'relative',top:'120px'}}>
+                    <CustomFooter/>
                 </div>
             </div>
         )
     }
 }
-
-//<img src={img_main} style={{height:'700px'}}></img> <ShopCarousel pics={pics}/>
