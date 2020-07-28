@@ -24,7 +24,7 @@ ul {
     width: 24px;
     background-color: transparent;
     border-radius: 5px;
-    border: 2px solid black;
+    border: 1px solid black;
     transition: all 0.3s ease-out;
     -webkit-transition: all 0.3s ease-out;
     -moz-transition: all 0.3s ease-out;
@@ -34,10 +34,6 @@ ul {
 .checkbox-label input:checked ~ .checkbox-custom{
     background-color: grey;
 }
-.checkbox-label input:active ~ .checkbox-custom{
-    background-color: grey;
-}
-
 
 .checkbox-custom:after {
     content: "";
@@ -47,19 +43,43 @@ ul {
 .checkbox-label input:checked ~ .checkbox-custom:after{
     display: block;
 }
-.checkbox-label input:active ~ .checkbox-custom:after{
-    display: block;
-}
 .checkbox-label .checkbox-custom:after{
     left: 9px;
     top: 5px;
     width: 5px;
     height: 10px;
-    border: solid white;
+    border-color: var(--color-var);
     border-width: 0 3px 3px 0;
     -webkit-transform: rotate(45deg);
     -ms-transform: rotate(45deg);
     transform: rotate(45deg);
+}
+/*collapse*/
+.side-menu{
+    position: relative;
+    left: 0;
+    display: flex;
+    transition: 0.5s;
+    border:1px solid rgba(0,0,0,0.25);
+    box-shadow: rgba(0, 0, 0, 0.25) 3px 0px 5px 0.5px;
+    background-color: white;
+    min-height: 100vh;
+    width:fit-content
+}
+.control-collapse-col {
+    position: relative;
+    left:0;
+    transition: 0.5s;
+    background-color:#FEF9F6
+}
+.database-content-main {
+    left:0;
+    background-color: #FEF9F6;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    min-height: 100vh;
 }
 @media screen and (min-width: 801px) {
     .image-text {
@@ -73,6 +93,9 @@ ul {
     .database-content {
         position: relative;
         top:210px;
+    }
+    .control-collapse-col {
+        display: none;
     }
 }
 

@@ -18,7 +18,7 @@ export default class Manufacture extends Component {
         this.state={
             manufacturers: [],
             saved: [],
-            collapse: true
+            collapse: false
         }
     }
     async getManufacturerfromDB () {
@@ -35,6 +35,13 @@ export default class Manufacture extends Component {
         this.getManufacturerfromDB()
         this.getSavedfromDB()
     }
+    componentWillMount = () => {
+        if(this.state.collapse){
+            document.body.style.backgroundColor = 'rgba(0,0,0,0.65)'
+        } else {
+            document.body.style.backgroundColor = null
+        }
+    }
     render(){
         return(
             <div>
@@ -44,17 +51,15 @@ export default class Manufacture extends Component {
                 <div className='database-title'>
                     <div className="image-text" style={ImageText}>MANUFACTURER DATABASE</div>
                 </div>
-                <Row style={{textAlign:'left',margin:'0',backgroundColor:'#FEF9F6'}} className='database-content'>
-                    <Col md={4} xs={9} style={{border:'1px solid rgba(0,0,0,0.25)', boxShadow:'rgba(0, 0, 0, 0.25) 3px 0px 5px 0.5px', 
-                backgroundColor:'white',minHeight:'100vh',display:this.state.collapse?'none':'block'}} className={`side-menu ${this.state.collapse?'collapse':'show'}`}>
+                <Row style={{textAlign:'left',margin:'0',backgroundColor:'#FEF9F6',flexDirection:'row'}} className='database-content'>
+                    <Col md={4} xs={this.state.collapse?1:9} className='side-menu' style={this.state.collapse?{left:'-100%',transition:'0.5s'}:{}}>
                         <SideMenu />
                     </Col>
-                    <Col xs={3} md={1} style={{backgroundColor:'#FEF9F6'}}>
+                    <Col xs={3} md={1} style={this.state.collapse?{transition:'0.5s',left:'-10%'}:{}} className='control-collapse-col'>
                         <Button onClick={()=>{this.setState({collapse:!this.state.collapse})}} className='control-collapse'>{this.state.collapse?<RightOutlined />:<LeftOutlined />}</Button>
                     </Col>
-                    <Col md={this.state.collapse?11:7} style={{flexDirection:'column', width:'100%', alignItems:'center',
-                backgroundColor:'#FEF9F6', minHeight:'100vh',display:this.state.collapse?'flex':'none'}}>
-                        {this.state.manufacturers.length !== 0 ? this.state.manufacturers.map((manu, i)=>{
+                    <Col xs={7} className='database-content-main' style={this.state.collapse?{transition:'0.5s',left:'-10%'}:{}}>
+                        {this.state.manufacturers.length!== 0?this.state.manufacturers.map((manu, i)=>{
                             return(
                                 <ManuCard info={manu} index={i} saved={this.state.saved}/>
                             )

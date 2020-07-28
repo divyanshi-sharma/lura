@@ -54,9 +54,24 @@ export const manuInfo = [{
 
 //shop page constants
 export const shopFabrics = [
-    ['Recycled Cotton','Silk','Hemp'], 
-    ['Lyocell Fibre','Wool'], ['Recycled Polyester']
+    ['Plant based','Organic cotton','Linen','Hemp', 'Ramie'],
+    ['Animal based','Alpaca','Silk','Ethical leather/vegan leather','Ethical wool','Ethical cashmere'],
+    ['Semi-synthetic','Bamboo','Lyocell/viscose/tencel','Pineapple fibres','Rayon','Biodegradable nylon','Refibra'], 
+    ['Recycled','Recycled polyester','Recycled nylon','Recycled cotton','Recycled wool'], ['Denim','Denim']
 ]
+export const color = ['Black','White','Brown',"Red",'Orange','Yellow','Green','Blue',"Purple",'Pink']
+export const print = ['Polka dot','Stripes','Floral','Animal','Abstract','Paisley','Checkered','Plaid','Customisable','Miscellaneous/other']
+export const location = [
+    ['North America','Cananda','North East US','Southwest US','Southeast US','Midwest US','West coast US'],
+    ['South America','South America'],
+    ['Africa','Africa'],
+    ['Australia','Australia '],
+    ['Asia','South Asia','South east Asia','East Asia'],
+    ['Europe','Europe']
+]
+export const shop_prices = ['~ $5 per yard', '$5 - $10 per yard', "$10 - $30 per yard", "$30+"]
+export const shop_weights = ['Lightweight ~6 oz','Medium weight 6-8 oz','Heavy weight 8+ oz']
+export const detailing = ['Velvet','Mesh','Satin','Sequins/glitter','Metallic','Canvas','Lace']
 
 export const shopSectors = [
     {
